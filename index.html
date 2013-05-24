@@ -1,44 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<html>
+  <head>
+    <title>bb</title>
+    <link rel="stylesheet" href="assets/css/foundation.css">
+  </head>
+  <body>
 
-  <title>Backbone Boilerplate</title>
+    <div class="container">
+      <div class="row">
+        <div class="large-8 centered columns appView">
+          <ul class="workout-list">
 
-  <!-- Application styles. -->
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <!--(if target dummy)><!-->
-  <link rel="stylesheet" href="/app/styles/index.css">
-  <!--<!(endif)-->
 
-  <!--(if target release)>
-  <link rel="stylesheet" href="index.css">
-  <!(endif)-->
+    <script id="workout-item" type="text/x-handlebars-template">
+      fuck this list
+    </script>
 
-  <!--(if target debug)>
-  <link rel="stylesheet" href="index.css">
-  <!(endif)-->
-</head>
-
-<body>
-  <!-- Application container. -->
-
-  <main role="main" id="main"></main>
-
-  <!-- Application source. -->
-
-  <!--(if target dummy)><!-->
-  <script data-main="/app/config" src="/vendor/js/libs/require.js"></script>
-  <!--<!(endif)-->
-
-  <!--(if target release)>
-  <script src="require.js"></script>
-  <!(endif)-->
-
-  <!--(if target debug)>
-  <script src="require.js"></script>
-  <!(endif)-->
-</body>
+     <script src="components/jquery/jquery.min.js"></script>
+     <script src="components/handlebars/handlebars.js"></script>
+     <script src="components/underscore/underscore-min.js"></script>
+     <script src="components/backbone/backbone-min.js"></script>
+     <script src="app.js"></script>
+  </body>
 </html>
