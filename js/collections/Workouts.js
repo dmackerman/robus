@@ -5,11 +5,11 @@ var app = app || {};
 
   /* collection */
   app.WorkoutsCollection = Backbone.Collection.extend({
-    url: './data/workouts.json',
     model: app.Workout,
-    initialize: function() {
-      this.fetch();
-    }
+    localStorage: new Backbone.LocalStorage("Workouts")
   });
+
+  /* create the collection */
+  app.Workouts = new app.WorkoutsCollection();
 
 })();

@@ -9,13 +9,17 @@ var app = app || {};
     className: 'list',
     initialize: function() {
       /* initialize the container view for the list of workouts */
-      this.collection.on('add', this.addOne, this);
+      this.listenTo(this.collection, 'add', this.addWorkout);
     },
     render: function() {
-      this.collection.each(this.addOne, this);
+      /* for every model in the collection, render an individual view */
+      this.collection.each(this.addWorkout, this);
       return this;
     },
-    addOne: function(workout) {
+    onChanged: function() {
+      console.log('change');
+    },
+    addWorkout: function(workout) {
       var workoutView = new app.WorkoutView({
         model: workout
       });

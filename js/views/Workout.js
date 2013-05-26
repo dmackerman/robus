@@ -28,8 +28,7 @@ var app = app || {};
       });
     },
     editWorkout: function() {
-      /* inject the edit view */
-      // this.model.set('name', newName);
+
     },
     deleteWorkout: function() {
       this.model.destroy();

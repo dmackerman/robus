@@ -47,15 +47,16 @@
        <div class="header-animated">
          <div class="button-prev">Back</div>
          <h1 class="title">Workouts</h1>
-         <div class="button">Add</div>
+         <div class="button button-add">Add</div>
         </div>
       </header>
       <div class="content"></div>
     </script>
 
     <script id="workout-item" type="text/x-handlebars-template">
-      <a href="#/workout/{{slug}}">
+      <a href="#workouts/{{slug}}">
         {{name}}
+        <a style="margin-right: 25px;" class="button-negative delete">Delete</a>
         <span class="chevron"></span>
       </a>
     </script>
@@ -73,11 +74,19 @@
       <input type="text" value="<%= name %>" />
     </script>
 
-    <script id="add-new-workout" type="text/x-handlebars-template">
-      <form id="addWorkout" action="#">
-        <input type="text" placeholder="Workout name" required>
-        <button type="submit">Add Workout</button>
-      </form>
+    <script id="add-workout-view" type="text/x-handlebars-template">
+      <header class="bar-title">
+       <div class="header-animated">
+         <div class="button-prev">Back</div>
+         <h1 class="title">Add Workout</h1>
+        </div>
+      </header>
+      <div class="content content-padded">
+        <form id="addWorkout" action="#">
+          <input type="text" placeholder="Workout name" required>
+          <button type="submit">Add Workout</button>
+        </form>
+      </div>
     </script>
 
     <script src="js/app.min.js"></script>

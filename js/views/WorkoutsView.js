@@ -7,11 +7,14 @@ var app = app || {};
   app.WorkoutsView = Jr.View.extend({
     template: Handlebars.compile($('#workouts-view').html()),
     events: {
-      'click .button-prev': 'onClickButtonPrev'
+      'click .button-prev': 'onClickButtonPrev',
+      'click .button-add': 'onClickButtonAdd'
     },
     initialize: function() {
       /* initialize the container view for the list of workouts and pass it our collection */
-      this.workoutsListView = new app.WorkoutsListView({ collection: new app.WorkoutsCollection() });
+      /* and fetch the data from our collection (which is in localStorage) */
+      app.Workouts.fetch();
+      this.workoutsListView = new app.WorkoutsListView({ collection: app.Workouts });
     },
     render: function() {
       this.$el.html(this.template());
@@ -23,9 +26,17 @@ var app = app || {};
       Jr.Navigator.navigate('home', {
         trigger: true,
         animation: {
-          // This time slide to the right because we are going back
           type: Jr.Navigator.animations.SLIDE_STACK,
           direction: Jr.Navigator.directions.RIGHT
+        }
+      });
+    },
+    onClickButtonAdd: function() {
+      Jr.Navigator.navigate('add', {
+        trigger: true,
+        animation: {
+          type: Jr.Navigator.animations.SLIDE_STACK,
+          direction: Jr.Navigator.directions.UP
         }
       });
     }

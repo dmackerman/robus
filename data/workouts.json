@@ -1,46 +1,16 @@
-[{
+var data = [{
   "name": "Back and Biceps",
-  "slug": "back-bi",
-  "sets": 5,
-  "exercises": [{
-    "name": "Deadlift"
-  }, {
-    "name": "Upright Row"
-  }]
+  "slug": "back-bi"
 }, {
   "name": "Chest and Triceps",
-  "slug": "chest-tri",
-  "sets": 5,
-  "exercises": [{
-    "name": "Deadlift"
-  }, {
-    "name": "Upright Row"
-  }]
+  "slug": "chest-tri"
 }, {
   "name": "Shoulders",
-  "slug": "shoulders",
-  "sets": 5,
-  "exercises": [{
-    "name": "Deadlift"
-  }, {
-    "name": "Upright Row"
-  }]
+  "slug": "shoulders"
 }, {
   "name": "Legs",
-  "slug": "legs",
-  "sets": 5,
-  "exercises": [{
-    "name": "Deadlift"
-  }, {
-    "name": "Upright Row"
-  }]
+  "slug": "legs"
 }, {
   "name": "Abs",
-  "slug": "abs",
-  "sets": 5,
-  "exercises": [{
-    "name": "Deadlift"
-  }, {
-    "name": "Upright Row"
-  }]
+  "slug": "abs"
 }]
