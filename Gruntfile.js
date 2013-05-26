@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       /* watch and see if our javascript files change, or new packages are installed */
       js: {
-        files: ['assets/js/**/*.js', 'components/**/*.js'],
+        files: ['js/**/*.js', 'components/**/*.js'],
         tasks: ['uglify']
       },
       /* watch our files for change, reload */
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'assets/js/app.min.js': [
+          'js/app.min.js': [
             "components/jquery/jquery.min.js",
             "components/handlebars/handlebars.js",
             "components/underscore/underscore-min.js",

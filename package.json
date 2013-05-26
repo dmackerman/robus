@@ -11,6 +11,7 @@
     "grunt-contrib-watch": "~0.4.3",
     "grunt-rsync": "~0.1.1",
     "matchdep": "~0.1.2",
-    "assemble": "~0.3.77"
+    "assemble": "~0.3.77",
+    "grunt-jsonlint": "~1.0.0"
   }
 }
