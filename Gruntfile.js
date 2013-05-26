@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       /* watch and see if our javascript files change, or new packages are installed */
       js: {
-        files: ['js/**/*.js', 'components/**/*.js'],
+        files: ['js/**/*.js', '!js/app.min.js', 'components/**/*.js'],
         tasks: ['uglify']
       },
       /* watch our files for change, reload */
@@ -82,6 +82,12 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    jsonlint: {
+      sample: {
+        src: [ 'js/**/*.js', '!js/app.min.js' ]
+      }
+    }
 
   });
 
