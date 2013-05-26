@@ -1,30 +1,67 @@
 <html>
   <head>
     <title>bb</title>
-    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body>
 
     <div class="container">
       <div class="row">
-        <div class="large-8 centered columns appView">
+        <div class="large-7 columns appView">
           <h3>Workout Machine</h3>
-          <ul class="workout-list">
-
-          </ul>
+          <form id="addWorkout" action="#">
+            <input type="text" placeholder="Workout name" required>
+            <button class="success radius" type="submit">Add Workout</button>
+          </form>
+          <table>
+            <thead>
+              <tr>
+                <th width="200">Name</th>
+                <th width="200">Sets</th>
+                <th width="200"></th>
+              </tr>
+            </thead>
+            <tbody class="workout-list"></tbody>
+          </table>
         </div>
+        <div class="large-5 columns workout-detail"></div>
       </div>
     </div>
 
-
-    <script id="workout-item" type="text/template">
-      <%= name %>
+    <script id="workout-item" type="text/x-handlebars-template">
+      <td><span><a href="#/workout/{{slug}}">{{name}}</a></span></td>
+      <td>{{sets}}</td>
+      <td>
+        <a class="button small radius edit">Edit</a>
+        <a class="button small radius delete">Delete</a>
+      </td>
     </script>
 
-     <script src="components/jquery/jquery.min.js"></script>
-     <script src="components/handlebars/handlebars.js"></script>
-     <script src="components/underscore/underscore-min.js"></script>
-     <script src="components/backbone/backbone-min.js"></script>
-     <script src="app.js"></script>
+    <script id="workout-item-detail" type="text/x-handlebars-template">
+      <h3>{{name}}</h3>
+      <ul>
+      {{#each exercises}}
+        <li>{{name}}</li>
+      {{/each}}
+      </ul>
+    </script>
+
+
+    <script id="workout-item-edit" type="text/x-handlebars-template">
+      <input type="text" value="<%= name %>" />
+    </script>
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/handlebars/handlebars.js"></script>
+    <script src="components/underscore/underscore-min.js"></script>
+    <script src="components/backbone/backbone-min.js"></script>
+    <script src="js/models/Workout.js"></script>
+    <script src="js/collections/Workouts.js"></script>
+    <script src="js/routers/Router.js"></script>
+    <script src="js/views/AddWorkout.js"></script>
+    <script src="js/views/Workout.js"></script>
+    <script src="js/views/WorkoutDetail.js"></script>
+    <script src="js/views/Workouts.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
