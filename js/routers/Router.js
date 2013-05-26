@@ -4,13 +4,26 @@ var app = app || {};
 (function() {
   'use strict';
 
-  app.AppRouter = Backbone.Router.extend({
+  app.AppRouter = Jr.Router.extend({
     routes: {
-      "workout/:query": "detail"
+      'home': 'home',
+      'workouts': 'workouts',
+      'workouts/:query': 'detail'
     },
     initialize: function(options) {
 
+    },
+    home: function(){
+      var homeView = new app.HomeView();
+      this.renderView(homeView);
+      console.log('home');
+    },
+    workouts: function() {
+      var workoutsView = new app.WorkoutsView();
+      this.renderView(workoutsView);
+      console.log('workouts');
     }
+
   });
 
   // Initiate the router

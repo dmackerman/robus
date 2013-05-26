@@ -3,7 +3,8 @@ var app = app || {};
 (function($) {
   'use strict';
 
-  app.WorkoutView = Backbone.View.extend({
+  /* the individual list item in the workouts list */
+  app.WorkoutView = Jr.View.extend({
     tagName: 'li',
     template: Handlebars.compile($('#workout-item').html()),
     events: {
@@ -22,11 +23,9 @@ var app = app || {};
     },
     viewWorkoutDetail: function() {
       /* create our detail view */
-      console.log(this.model);
       var workoutDetailView = new app.WorkoutDetailView({
         model: this.model
       });
-      // $('.workout-detail').html(workoutDetailView.render().el);
     },
     editWorkout: function() {
       /* inject the edit view */
@@ -40,4 +39,4 @@ var app = app || {};
     }
   });
 
-})(jQuery);
+})(Zepto);

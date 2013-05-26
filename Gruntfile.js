@@ -25,7 +25,8 @@ module.exports = function(grunt) {
       /* watch and see if our javascript files change, or new packages are installed */
       js: {
         files: ['js/**/*.js', '!js/app.min.js', 'components/**/*.js'],
-        tasks: ['uglify', 'jshint']
+        tasks: ['uglify']
+        // tasks: ['uglify', 'jshint']
       },
       /* watch our files for change, reload */
       livereload: {
@@ -67,26 +68,32 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'js/app.min.js': [
-            "components/jquery/jquery.min.js",
+            "js/lib/modernizr.custom.15848.js",
+            "js/lib/zepto.min.js",
+            "js/lib/zepto.flickable.min.js",
             "components/handlebars/handlebars.js",
             "components/underscore/underscore-min.js",
+            "js/lib/lodash.min.js",
             "components/backbone/backbone-min.js",
+            "js/lib/junior.js",
             "js/models/Workout.js",
             "js/collections/Workouts.js",
-            "js/routers/Router.js",
             "js/views/AddWorkout.js",
             "js/views/Workout.js",
             "js/views/WorkoutDetail.js",
             "js/views/Workouts.js",
-            "js/views/Header.js",
+            "js/views/WorkoutsListView.js",
+            "js/views/WorkoutsView.js",
+            "js/views/Homeview.js",
+            "js/routers/Router.js",
             "js/app.js"]
         }
       }
-    },
-
-    jshint: {
-      all: ['js/**/*.js', '!js/**/*app.min.js']
     }
+
+    // jshint: {
+    //   all: ['js/**/*.js', '!js/**/*app.min.js']
+    // }
 
   });
 
