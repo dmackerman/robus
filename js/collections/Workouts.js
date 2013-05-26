@@ -5,7 +5,11 @@ var app = app || {};
 
   /* collection */
   app.WorkoutsCollection = Backbone.Collection.extend({
-    model: app.Workout
+    url: './data/workouts.json',
+    model: app.Workout,
+    initialize: function() {
+      this.fetch();
+    }
   });
 
 })();
