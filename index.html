@@ -1,40 +1,31 @@
 <html>
   <head>
-    <title>bb</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>robus</title>
+
     <link rel="stylesheet" href="assets/css/app.css">
+
+    <script type="text/javascript" src="//use.typekit.net/kor7zkm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
   </head>
   <body>
 
-    <div class="container">
-      <div class="row">
-        <div class="large-7 columns appView">
-          <h3>Workout Machine</h3>
-          <form id="addWorkout" action="#">
-            <input type="text" placeholder="Workout name" required>
-            <button class="success radius" type="submit">Add Workout</button>
-          </form>
-          <table>
-            <thead>
-              <tr>
-                <th width="200">Name</th>
-                <th width="200">Sets</th>
-                <th width="200"></th>
-              </tr>
-            </thead>
-            <tbody class="workout-list"></tbody>
-          </table>
-        </div>
-        <div class="large-5 columns workout-detail"></div>
-      </div>
-    </div>
+    <header class="bar-title">
+      <h1 class="title">robus</h1>
+      <a class="button" href="#">Add</a>
+    </header>
+
+    <div class="content"></div>
 
     <script id="workout-item" type="text/x-handlebars-template">
-      <td><span><a href="#/workout/{{slug}}">{{name}}</a></span></td>
-      <td>{{sets}}</td>
-      <td>
-        <a class="button small radius edit">Edit</a>
-        <a class="button small radius delete">Delete</a>
-      </td>
+      <a href="#/workout/{{slug}}">
+        {{name}}
+        <span class="chevron"></span>
+      </a>
     </script>
 
     <script id="workout-item-detail" type="text/x-handlebars-template">
@@ -46,9 +37,15 @@
       </ul>
     </script>
 
-
     <script id="workout-item-edit" type="text/x-handlebars-template">
       <input type="text" value="<%= name %>" />
+    </script>
+
+    <script id="add-new-workout" type="text/x-handlebars-template">
+      <form id="addWorkout" action="#">
+        <input type="text" placeholder="Workout name" required>
+        <button type="submit">Add Workout</button>
+      </form>
     </script>
 
     <script src="js/app.min.js"></script>

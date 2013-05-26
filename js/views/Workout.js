@@ -4,7 +4,7 @@ var app = app || {};
   'use strict';
 
   app.WorkoutView = Backbone.View.extend({
-    tagName: 'tr',
+    tagName: 'li',
     template: Handlebars.compile($('#workout-item').html()),
     events: {
       'click span': 'viewWorkoutDetail',
@@ -26,7 +26,7 @@ var app = app || {};
       var workoutDetailView = new app.WorkoutDetailView({
         model: this.model
       });
-      $('.workout-detail').html(workoutDetailView.render().el);
+      // $('.workout-detail').html(workoutDetailView.render().el);
     },
     editWorkout: function() {
       /* inject the edit view */

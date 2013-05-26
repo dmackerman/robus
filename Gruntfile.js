@@ -78,6 +78,7 @@ module.exports = function(grunt) {
             "js/views/Workout.js",
             "js/views/WorkoutDetail.js",
             "js/views/Workouts.js",
+            "js/views/Header.js",
             "js/app.js"]
         }
       }

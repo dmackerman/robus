@@ -5,9 +5,10 @@
  * http://opensource.org/licenses/MIT
  * ==================================
  */
+
 /* Hard reset
 -------------------------------------------------- */
-/* line 88, ../sass/_ratchet.scss */
+
 html,
 body,
 div,
@@ -91,15 +92,14 @@ video {
 }
 
 /* Prevents iOS text size adjust after orientation change, without disabling (Thanks to @necolas) */
-/* line 95, ../sass/_ratchet.scss */
 html {
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
 /* Base styles
 -------------------------------------------------- */
-/* line 103, ../sass/_ratchet.scss */
+
 body {
   position: fixed;
   top: 0;
@@ -112,16 +112,13 @@ body {
 }
 
 /* Universal link styling */
-/* line 115, ../sass/_ratchet.scss */
 a {
   color: #0882f0;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* Removes the dark touch outlines on links */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Removes the dark touch outlines on links */
 }
 
 /* Wrapper to be used around all content not in .bar-title and .bar-tab */
-/* line 122, ../sass/_ratchet.scss */
 .content {
   position: fixed;
   top: 0;
@@ -131,48 +128,39 @@ a {
   overflow: auto;
   background: #fff;
   -webkit-transition-property: top, bottom;
-  transition-property: top, bottom;
+          transition-property: top, bottom;
   -webkit-transition-duration: .2s, .2s;
-  transition-duration: .2s, .2s;
+          transition-duration: .2s, .2s;
   -webkit-transition-timing-function: linear, linear;
-  transition-timing-function: linear, linear;
+          transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
 }
 
 /* Hack to force all relatively and absolutely positioned elements still render while scrolling
    Note: This is a bug for "-webkit-overflow-scrolling: touch" */
-/* line 141, ../sass/_ratchet.scss */
 .content > * {
   -webkit-transform: translateZ(0px);
-  transform: translateZ(0px);
+          transform: translateZ(0px);
 }
 
 /* Utility wrapper to pad in components like forms, block buttons and segmented-controllers so they're not full-bleed */
-/* line 147, ../sass/_ratchet.scss */
 .content-padded {
   padding: 10px;
 }
 
 /* Pad top/bottom of content so it doesn't hide behind .bar-title and .bar-tab.
    Note: For these to work, content must come after both bars in the markup */
-/* line 153, ../sass/_ratchet.scss */
 .bar-title ~ .content {
   top: 44px;
 }
-
-/* line 156, ../sass/_ratchet.scss */
 .bar-tab ~ .content {
   bottom: 51px;
 }
-
-/* line 159, ../sass/_ratchet.scss */
 .bar-header-secondary ~ .content {
   top: 88px;
-}
-
- /* General bar styles
+}/* General bar styles
 -------------------------------------------------- */
-/* line 164, ../sass/_ratchet.scss */
+
 [class*="bar-"] {
   position: fixed;
   right: 0;
@@ -184,19 +172,16 @@ a {
 }
 
 /* Modifier class to dock any bar below .bar-title */
-/* line 175, ../sass/_ratchet.scss */
 .bar-header-secondary {
   top: 45px;
 }
 
 /* Modifier class to dock any bar to bottom of viewport */
-/* line 180, ../sass/_ratchet.scss */
 .bar-footer {
   bottom: 0;
 }
 
 /* Generic bar for wrapping buttons, segmented controllers, etc. */
-/* line 185, ../sass/_ratchet.scss */
 .bar-standard {
   background-color: #f2f2f2;
   background-image: -webkit-linear-gradient(top, #f2f2f2 0, #e5e5e5 100%);
@@ -206,7 +191,6 @@ a {
 }
 
 /* Flip border position to top for footer bars */
-/* line 195, ../sass/_ratchet.scss */
 .bar-footer.bar-standard,
 .bar-footer-secondary.bar-standard {
   border-top: 1px solid #aaa;
@@ -215,8 +199,8 @@ a {
 
 /* Title bar
 -------------------------------------------------- */
+
 /* Bar docked to top of viewport for showing page title and actions */
-/* line 204, ../sass/_ratchet.scss */
 .bar-title {
   top: 0;
   display: -webkit-box;
@@ -225,13 +209,12 @@ a {
   background-image: -webkit-linear-gradient(top, #1eb0e9 0, #109adc 100%);
   background-image: linear-gradient(to bottom, #1eb0e9 0, #109adc 100%);
   border-bottom: 1px solid #0e5895;
-  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, .8);
   -webkit-box-orient: horizontal;
-  box-orient: horizontal;
+          box-orient: horizontal;
 }
 
 /* Centered text in the .bar-title */
-/* line 218, ../sass/_ratchet.scss */
 .bar-title .title {
   position: absolute;
   top: 0;
@@ -243,11 +226,10 @@ a {
   line-height: 44px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
   white-space: nowrap;
 }
 
-/* line 233, ../sass/_ratchet.scss */
 .bar-title > a:not([class*="button"]) {
   display: block;
   width: 100%;
@@ -255,15 +237,14 @@ a {
 }
 
 /* Retain specified title color */
-/* line 240, ../sass/_ratchet.scss */
 .bar-title .title a {
   color: inherit;
 }
 
 /* Tab bar
 -------------------------------------------------- */
+
 /* Bar docked to bottom used for primary app navigation */
-/* line 248, ../sass/_ratchet.scss */
 .bar-tab {
   bottom: 0;
   height: 50px;
@@ -273,39 +254,35 @@ a {
   background-image: linear-gradient(to bottom, #393939 0, #2b2b2b 100%);
   border-top: 1px solid #000;
   border-bottom-width: 0;
-  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, .6);
 }
 
 /* Wrapper for individual tab */
-/* line 261, ../sass/_ratchet.scss */
 .tab-inner {
   display: -webkit-box;
   display: box;
   height: 100%;
   list-style: none;
   -webkit-box-orient: horizontal;
-  box-orient: horizontal;
+          box-orient: horizontal;
 }
 
 /* Navigational tab */
-/* line 271, ../sass/_ratchet.scss */
 .tab-item {
   height: 100%;
   padding-top: 9px;
   text-align: center;
   box-sizing: border-box;
   -webkit-box-flex: 1;
-  box-flex: 1;
+          box-flex: 1;
 }
 
 /* Active state for tab */
-/* line 281, ../sass/_ratchet.scss */
 .tab-item.active {
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, .5);
 }
 
 /* Icon for tab  */
-/* line 286, ../sass/_ratchet.scss */
 .tab-icon {
   display: block;
   height: 18px;
@@ -313,39 +290,37 @@ a {
 }
 
 /* Label for tab */
-/* line 293, ../sass/_ratchet.scss */
 .tab-label {
   margin-top: 1px;
   font-size: 10px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgba(0, 0, 0, .3);
 }
 
 /* Buttons in title bars
 -------------------------------------------------- */
+
 /* Generic style for all buttons in .bar-title */
-/* line 305, ../sass/_ratchet.scss */
 .bar-title [class*="button"] {
   position: relative;
-  z-index: 10;
-  /* Places buttons over full width title */
+  z-index: 10; /* Places buttons over full width title */
   font-size: 12px;
   line-height: 23px;
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
   background-color: #1eb0e9;
   background-image: -webkit-linear-gradient(top, #1eb0e9 0, #0984c6 100%);
   background-image: linear-gradient(to bottom, #1eb0e9 0, #0984c6 100%);
   border: 1px solid #0e5895;
-  box-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px rgba(255, 255, 255, .25);
   -webkit-box-flex: 0;
-  box-flex: 0;
+          box-flex: 0;
 }
+
 
 /* Hacky way to right align buttons outside of flex-box system
    Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
-/* line 326, ../sass/_ratchet.scss */
 .bar-title .title + [class*="button"]:last-child,
 .bar-title .button + [class*="button"]:last-child,
 .bar-title [class*="button"].pull-right {
@@ -355,7 +330,6 @@ a {
 }
 
 /* Override standard button active states */
-/* line 333, ../sass/_ratchet.scss */
 .bar-title .button:active {
   color: #fff;
   background-color: #0876b1;
@@ -363,34 +337,28 @@ a {
 
 /* Directional buttons in title bars (thanks to @GregorAdams for solution - http://cssnerd.com/2011/11/30/the-best-pure-css3-ios-style-arrow-back-button/)
 -------------------------------------------------- */
+
 /* Add relative positioning so :before content is positioned properly */
-/* line 343, ../sass/_ratchet.scss */
 .bar-title .button-prev,
 .bar-title .button-next {
   position: relative;
 }
 
 /* Prev/next button base styles */
-/* line 348, ../sass/_ratchet.scss */
 .bar-title .button-prev {
-  margin-left: 7px;
-  /* Push over to make room for :before content */
+  margin-left: 7px; /* Push over to make room for :before content */
   border-left: 0;
   border-bottom-left-radius: 10px 15px;
   border-top-left-radius: 10px 15px;
 }
-
-/* line 354, ../sass/_ratchet.scss */
 .bar-title .button-next {
-  margin-right: 7px;
-  /* Push over to make room for :before content */
+  margin-right: 7px; /* Push over to make room for :before content */
   border-right: 0;
   border-top-right-radius: 10px 15px;
   border-bottom-right-radius: 10px 15px;
 }
 
 /* Pointed part of directional button */
-/* line 363, ../sass/_ratchet.scss */
 .bar-title .button-prev:before,
 .bar-title .button-next:before {
   position: absolute;
@@ -400,32 +368,27 @@ a {
   border-radius: 30px 100px 2px 40px / 2px 40px 30px 100px;
   content: '';
   box-shadow: inset 1px 0 #0e5895, inset 0 1px #0e5895;
-  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent));
-  mask-image: gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(#000), color-stop(.33, #000), color-stop(.5, transparent), to(transparent));
+                  mask-image: gradient(linear, left top, right bottom, from(#000), color-stop(.33, #000), color-stop(.5, transparent), to(transparent));
 }
-
-/* line 374, ../sass/_ratchet.scss */
 .bar-title .button-prev:before {
   left: -5px;
   background-image: -webkit-gradient(linear, left bottom, right top, from(#0984c6), to(#1eb0e9));
   background-image: gradient(linear, left bottom, right top, from(#0984c6), to(#1eb0e9));
-  border-left: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-left: 1.5px solid rgba(255, 255, 255, .25);
   -webkit-transform: rotate(-45deg) skew(-10deg, -10deg);
-  transform: rotate(-45deg) skew(-10deg, -10deg);
+          transform: rotate(-45deg) skew(-10deg, -10deg);
 }
-
-/* line 382, ../sass/_ratchet.scss */
 .bar-title .button-next:before {
   right: -5px;
   background-image: -webkit-gradient(linear, left bottom, right top, from(#1eb0e9), to(#0984c6));
   background-image: gradient(linear, left bottom, right top, from(#1eb0e9), to(#0984c6));
-  border-top: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-top: 1.5px solid rgba(255, 255, 255, .25);
   -webkit-transform: rotate(135deg) skew(-10deg, -10deg);
-  transform: rotate(135deg) skew(-10deg, -10deg);
+          transform: rotate(135deg) skew(-10deg, -10deg);
 }
 
 /* Active states for the directional buttons */
-/* line 395, ../sass/_ratchet.scss */
 .bar-title .button-prev:active,
 .bar-title .button-next:active,
 .bar-title .button-prev:active:before,
@@ -434,49 +397,41 @@ a {
   background-color: #0876b1;
   background-image: none;
 }
-
-/* line 401, ../sass/_ratchet.scss */
 .bar-title .button-prev:active:before,
 .bar-title .button-next:active:before {
   content: '';
 }
-
-/* line 404, ../sass/_ratchet.scss */
 .bar-title .button-prev:active:before {
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
 }
-
-/* line 407, ../sass/_ratchet.scss */
 .bar-title .button-next:active:before {
-  box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -3px 3px rgba(0, 0, 0, .2);
 }
 
 /* Block buttons in any bar
 -------------------------------------------------- */
+
 /* Add proper padding and replace buttons normal dropshadow with a shine from bar */
-/* line 415, ../sass/_ratchet.scss */
 [class*="bar"] .button-block {
   padding: 7px 0;
   margin-bottom: 0;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), 0 1px rgba(255, 255, 255, .8);
 }
 
 /* Override standard padding changes for .button-blocks */
-/* line 422, ../sass/_ratchet.scss */
 [class*="bar"] .button-block:active {
   padding: 7px 0;
 }
 
 /* Segmented controller in any bar
 -------------------------------------------------- */
+
 /* Remove standard segmented bottom margin */
-/* line 430, ../sass/_ratchet.scss */
 [class*="bar-"] .segmented-controller {
   margin-bottom: 0;
 }
 
 /* Add margins between segmented controllers and buttons */
-/* line 436, ../sass/_ratchet.scss */
 [class*="bar-"] .segmented-controller + [class*="button"],
 [class*="bar-"] [class*="button"] + .segmented-controller {
   margin-left: 5px;
@@ -484,7 +439,7 @@ a {
 
 /* Segmented controller in a title bar
 -------------------------------------------------- */
-/* line 443, ../sass/_ratchet.scss */
+
 .bar-title .segmented-controller {
   line-height: 18px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
@@ -493,57 +448,51 @@ a {
   background-image: linear-gradient(to bottom, #1eb0e9 0, #0984c6 100%);
   border: 1px solid #0e5895;
   border-radius: 3px;
-  box-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px rgba(255, 255, 255, .25);
   -webkit-box-flex: 1;
-  box-flex: 1;
+          box-flex: 1;
 }
 
 /* Set color for tab border and highlight */
-/* line 457, ../sass/_ratchet.scss */
 .bar-title .segmented-controller li {
   border-left: 1px solid #0e5895;
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 1px 0 rgba(255, 255, 255, .25);
 }
 
 /* Remove inset shadow from first tab or one to the right of the active tab  */
-/* line 464, ../sass/_ratchet.scss */
 .bar-title .segmented-controller .active + li,
 .bar-title .segmented-controller li:first-child {
   box-shadow: none;
 }
 
 /* Remove left-hand border from first tab */
-/* line 469, ../sass/_ratchet.scss */
 .bar-title .segmented-controller li:first-child {
   border-left-width: 0;
 }
 
 /* Depressed state (active) */
-/* line 474, ../sass/_ratchet.scss */
 .bar-title .segmented-controller li.active {
   background-color: #0082c4;
-  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 6px rgba(0, 0, 0, .3);
 }
 
 /* Set color of links to white */
-/* line 480, ../sass/_ratchet.scss */
 .bar-title .segmented-controller li > a {
   color: #fff;
 }
 
+
 /* Search forms in standard bar
 -------------------------------------------------- */
+
 /* Position/size search bar within the bar */
-/* line 489, ../sass/_ratchet.scss */
 .bar-standard input[type=search] {
   height: 32px;
   margin: 0;
-}
-
- /* Lists
+}/* Lists
 -------------------------------------------------- */
+
 /* Remove usual bullet styles from list */
-/* line 496, ../sass/_ratchet.scss */
 .list {
   margin-bottom: 10px;
   list-style: none;
@@ -551,22 +500,18 @@ a {
 }
 
 /* Pad each list item and add dividers */
-/* line 503, ../sass/_ratchet.scss */
 .list li {
   position: relative;
-  padding: 20px 60px 20px 10px;
-  /* Given extra right padding to accomodate counts, chevrons or buttons */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 60px 20px 10px; /* Given extra right padding to accomodate counts, chevrons or buttons */
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 /* Give top border to first list items */
-/* line 510, ../sass/_ratchet.scss */
 .list li:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 /* If a list of links, make sure the child <a> takes up full list item tap area (want to avoid selecting child buttons though) */
-/* line 515, ../sass/_ratchet.scss */
 .list li > a:not([class*="button"]) {
   position: relative;
   display: block;
@@ -577,30 +522,28 @@ a {
 
 /* Inset list
 -------------------------------------------------- */
-/* line 526, ../sass/_ratchet.scss */
+
 .list.inset {
   width: auto;
   margin-right: 10px;
   margin-left: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 6px;
   box-sizing: border-box;
 }
 
 /* Remove border from first/last standard list items to avoid double border at top/bottom of lists */
-/* line 536, ../sass/_ratchet.scss */
 .list.inset li:first-child {
   border-top-width: 0;
 }
-
-/* line 539, ../sass/_ratchet.scss */
 .list.inset li:last-child {
   border-bottom-width: 0;
 }
 
+
 /* List dividers
 -------------------------------------------------- */
-/* line 547, ../sass/_ratchet.scss */
+
 .list .list-divider {
   position: relative;
   top: -1px;
@@ -609,17 +552,16 @@ a {
   font-size: 12px;
   font-weight: bold;
   line-height: 18px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
   background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #eeeeee 100%);
-  background-image: linear-gradient(to bottom, #f8f8f8 0, #eeeeee 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #eee 100%);
+  background-image: linear-gradient(to bottom, #f8f8f8 0, #eee 100%);
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4);
 }
 
 /* Rounding first divider on inset lists and remove border on the top */
-/* line 565, ../sass/_ratchet.scss */
 .list.inset .list-divider:first-child {
   top: 0;
   border-top-width: 0;
@@ -627,14 +569,12 @@ a {
 }
 
 /* Rounding last divider on inset lists */
-/* line 572, ../sass/_ratchet.scss */
 .list.inset .list-divider:last-child {
   border-radius: 0 0 6px 6px;
 }
 
 /* Right-aligned subcontent in lists (chevrons, buttons, counts and toggles)
 -------------------------------------------------- */
-/* line 581, ../sass/_ratchet.scss */
 .list .chevron,
 .list [class*="button"],
 .list [class*="count"],
@@ -644,38 +584,29 @@ a {
   right: 10px;
 }
 
-/* Position chevrons/counts vertically centered on the right in list items */
-/* line 589, ../sass/_ratchet.scss */
+ /* Position chevrons/counts vertically centered on the right in list items */
 .list .chevron,
 .list [class*="count"] {
-  margin-top: -10px;
-  /* Half height of chevron */
+  margin-top: -10px; /* Half height of chevron */
 }
 
 /* Push count over if there's a sibling chevron */
-/* line 594, ../sass/_ratchet.scss */
 .list .chevron + [class*="count"] {
   right: 30px;
 }
 
 /* Position buttons vertically centered on the right in list items */
-/* line 599, ../sass/_ratchet.scss */
 .list [class*="button"] {
   left: auto;
-  margin-top: -14px;
-  /* Half height of button */
+  margin-top: -14px; /* Half height of button */
 }
 
-/* line 604, ../sass/_ratchet.scss */
 .list .toggle {
-  margin-top: -15px;
-  /* Half height of toggle */
-}
-
- /* Forms
+  margin-top: -15px; /* Half height of toggle */
+}/* Forms
 -------------------------------------------------- */
+
 /* Force form elements to inherit font styles */
-/* line 613, ../sass/_ratchet.scss */
 input,
 textarea,
 button,
@@ -685,7 +616,6 @@ select {
 }
 
 /* Stretch inputs/textareas to full width and add height to maintain a consistent baseline */
-/* line 635, ../sass/_ratchet.scss */
 select,
 textarea,
 input[type="text"],
@@ -708,15 +638,14 @@ input[type="color"],
   padding: 10px;
   margin-bottom: 10px;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
   -webkit-appearance: none;
   box-sizing: border-box;
 }
 
 /* Fully round search input */
-/* line 649, ../sass/_ratchet.scss */
 input[type=search] {
   height: 34px;
   font-size: 14px;
@@ -724,26 +653,25 @@ input[type=search] {
 }
 
 /* Allow text area's height to grow larger than a normal input */
-/* line 656, ../sass/_ratchet.scss */
 textarea {
   height: auto;
 }
 
 /* Style select button to look like part of the Ratchet's style */
-/* line 661, ../sass/_ratchet.scss */
 select {
   height: auto;
   font-size: 14px;
   background-color: #f8f8f8;
   background-image: -webkit-linear-gradient(top, #f8f8f8 0%, #d4d4d4 100%);
   background-image: linear-gradient(to bottom, #f8f8f8 0%, #d4d4d4 100%);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
 }
+
 
 /* Input groups (cluster multiple inputs together into a single group)
 -------------------------------------------------- */
+
 /* Reset from initial form setup styles */
-/* line 675, ../sass/_ratchet.scss */
 .input-group {
   width: auto;
   height: auto;
@@ -751,60 +679,52 @@ select {
 }
 
 /* Remove spacing, borders, shadows and rounding since it all belongs on the .input-group not the input */
-/* line 682, ../sass/_ratchet.scss */
 .input-group input {
   margin-bottom: 0;
   background-color: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
   border-radius: 0;
   box-shadow: none;
 }
 
 /* Remove bottom border on last input to avoid double bottom border */
-/* line 692, ../sass/_ratchet.scss */
 .input-group input:last-child {
   border-bottom-width: 0;
 }
 
 /* Input groups with labels
 -------------------------------------------------- */
+
 /* To use labels with input groups, wrap a label and an input in an .input-row */
-/* line 700, ../sass/_ratchet.scss */
 .input-row {
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 /* Remove bottom border on last input-row to avoid double bottom border */
-/* line 706, ../sass/_ratchet.scss */
 .input-row:last-child {
   border-bottom-width: 0;
 }
 
 /* Labels get floated left with a set percentage width */
-/* line 711, ../sass/_ratchet.scss */
 .input-row label {
   float: left;
   width: 25%;
-  padding: 11px 10px 9px 13px;
-  /* Optimizing the baseline for mobile. */
+  padding: 11px 10px 9px 13px; /* Optimizing the baseline for mobile. */
   font-weight: bold;
 }
 
 /* Actual inputs float to right of labels and also have a set percentage */
-/* line 719, ../sass/_ratchet.scss */
 .input-row label + input {
   float: right;
   width: 65%;
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;
-}
-
- /* General button styles
+}/* General button styles
 -------------------------------------------------- */
-/* line 728, ../sass/_ratchet.scss */
+
 [class*="button"] {
   position: relative;
   display: inline-block;
@@ -820,35 +740,33 @@ select {
   background-color: #f8f8f8;
   background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
   background-image: linear-gradient(to bottom, #f8f8f8 0, #d4d4d4 100%);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, .3);
   border-radius: 3px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), 0 1px 2px rgba(0, 0, 0, .05);
 }
 
 /* Active */
-/* line 749, ../sass/_ratchet.scss */
 [class*="button"]:active {
   padding-top: 5px;
   padding-bottom: 3px;
   color: #333;
   background-color: #ccc;
   background-image: none;
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
 }
 
 /* Button modifiers
 -------------------------------------------------- */
+
 /* Overriding styles for buttons with modifiers  */
-/* line 764, ../sass/_ratchet.scss */
 .button-main,
 .button-positive,
 .button-negative {
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
 }
 
 /* Main button */
-/* line 770, ../sass/_ratchet.scss */
 .button-main {
   background-color: #1eafe7;
   background-image: -webkit-linear-gradient(top, #1eafe7 0, #1a97c8 100%);
@@ -857,7 +775,6 @@ select {
 }
 
 /* Positive button  */
-/* line 778, ../sass/_ratchet.scss */
 .button-positive {
   background-color: #34ba15;
   background-image: -webkit-linear-gradient(top, #34ba15 0, #2da012 100%);
@@ -866,39 +783,30 @@ select {
 }
 
 /* Negative button  */
-/* line 786, ../sass/_ratchet.scss */
 .button-negative {
   background-color: #e71e1e;
-  background-image: -webkit-linear-gradient(top, #e71e1e 0, #c71a1a 100%);
+  background-image: -webkit-linear-gradient(top, #e71e1e 0,#c71a1a 100%);
   background-image: linear-gradient(to bottom, #e71e1e 0, #c71a1a 100%);
   border: 1px solid #b51a1a;
 }
 
 /* Active state for buttons with modifiers */
-/* line 796, ../sass/_ratchet.scss */
 .button-main:active,
 .button-positive:active,
 .button-negative:active {
   color: #fff;
 }
-
-/* line 799, ../sass/_ratchet.scss */
 .button-main:active {
   background-color: #0876b1;
 }
-
-/* line 802, ../sass/_ratchet.scss */
 .button-positive:active {
   background-color: #298f11;
 }
-
-/* line 805, ../sass/_ratchet.scss */
 .button-negative:active {
   background-color: #b21a1a;
 }
 
 /* Block level buttons (full width buttons) */
-/* line 810, ../sass/_ratchet.scss */
 .button-block {
   display: block;
   padding: 11px 0 13px;
@@ -907,47 +815,42 @@ select {
 }
 
 /* Active state for block level buttons */
-/* line 818, ../sass/_ratchet.scss */
 .button-block:active {
   padding: 12px 0;
 }
 
 /* Counts in buttons
 -------------------------------------------------- */
+
 /* Generic styles for all counts within buttons */
-/* line 826, ../sass/_ratchet.scss */
 [class*="button"] [class*="count"] {
   padding-top: 2px;
   padding-bottom: 2px;
   margin-right: -4px;
   margin-left: 4px;
   text-shadow: none;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, .2);
   box-shadow: inset 0 1px 1px -1px #000000, 0 1px 1px -1px #fff;
 }
 
 /* Position counts within block level buttons
    Note: These are absolutely positioned so that text of button isn't "pushed" by count and always
    stays at true center of button */
-/* line 839, ../sass/_ratchet.scss */
 .button-block [class*="count"] {
   position: absolute;
   right: 0;
   padding-top: 4px;
   padding-bottom: 4px;
   margin-right: 10px;
-}
-
- /* Chevrons
+}/* Chevrons
 -------------------------------------------------- */
-/* line 848, ../sass/_ratchet.scss */
+
 .chevron {
   display: block;
   height: 20px;
 }
 
 /* Base styles for both 1/2's of the chevron */
-/* line 855, ../sass/_ratchet.scss */
 .chevron:before,
 .chevron:after {
   position: relative;
@@ -959,23 +862,18 @@ select {
 }
 
 /* Position and rotate respective 1/2's of the chevron */
-/* line 865, ../sass/_ratchet.scss */
 .chevron:before {
   top: 5px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
-
-/* line 870, ../sass/_ratchet.scss */
 .chevron:after {
   top: 7px;
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
- /* General count styles
+          transform: rotate(-45deg);
+}/* General count styles
 -------------------------------------------------- */
-/* line 877, ../sass/_ratchet.scss */
+
 [class*="count"] {
   display: inline-block;
   padding: 4px 9px;
@@ -983,23 +881,22 @@ select {
   font-weight: bold;
   line-height: 13px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, .3);
   border-radius: 100px;
 }
 
 /* Count modifiers
 -------------------------------------------------- */
+
 /* Overriding styles for counts with modifiers  */
-/* line 894, ../sass/_ratchet.scss */
 .count-main,
 .count-positive,
 .count-negative {
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
 }
 
 /* Main count  */
-/* line 900, ../sass/_ratchet.scss */
 .count-main {
   background-color: #1eafe7;
   background-image: -webkit-linear-gradient(top, #1eafe7 0, #1a97c8 100%);
@@ -1007,7 +904,6 @@ select {
 }
 
 /* Positive count  */
-/* line 907, ../sass/_ratchet.scss */
 .count-positive {
   background-color: #34ba15;
   background-image: -webkit-linear-gradient(top, #34ba15 0, #2da012 100%);
@@ -1015,16 +911,13 @@ select {
 }
 
 /* Negative count  */
-/* line 914, ../sass/_ratchet.scss */
 .count-negative {
   background-color: #e71e1e;
-  background-image: -webkit-linear-gradient(top, #e71e1e 0, #c71a1a 100%);
+  background-image: -webkit-linear-gradient(top, #e71e1e 0,#c71a1a 100%);
   background-image: linear-gradient(to bottom, #e71e1e 0, #c71a1a 100%);
-}
-
- /* Segmented controllers
+}/* Segmented controllers
 -------------------------------------------------- */
-/* line 921, ../sass/_ratchet.scss */
+
 .segmented-controller {
   display: -webkit-box;
   display: box;
@@ -1032,32 +925,30 @@ select {
   overflow: hidden;
   font-size: 12px;
   font-weight: bold;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px rgba(255, 255, 255, .5);
   list-style: none;
   background-color: #f8f8f8;
   background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
   background-image: linear-gradient(to bottom, #f8f8f8 0, #d4d4d4 100%);
   border: 1px solid #aaa;
   border-radius: 3px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(255, 255, 255, .8);
   -webkit-box-orient: horizontal;
-  box-orient: horizontal;
+          box-orient: horizontal;
 }
 
 /* Section within controller */
-/* line 941, ../sass/_ratchet.scss */
 .segmented-controller li {
   overflow: hidden;
   text-align: center;
   white-space: nowrap;
   border-left: 1px solid #aaa;
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 0 rgba(255, 255, 255, .5);
   -webkit-box-flex: 1;
-  box-flex: 1;
+          box-flex: 1;
 }
 
 /* Link that fills each section */
-/* line 952, ../sass/_ratchet.scss */
 .segmented-controller li > a {
   display: block;
   padding: 8px 16px;
@@ -1068,32 +959,26 @@ select {
 }
 
 /* Remove border-left and shadow from first section */
-/* line 962, ../sass/_ratchet.scss */
 .segmented-controller li:first-child {
   border-left-width: 0;
   box-shadow: none;
 }
 
 /* Active segment of controller */
-/* line 968, ../sass/_ratchet.scss */
 .segmented-controller li.active {
   background-color: #ccc;
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, .3);
 }
 
-/* line 973, ../sass/_ratchet.scss */
 .segmented-controller-item {
   display: none;
 }
 
-/* line 977, ../sass/_ratchet.scss */
 .segmented-controller-item.active {
   display: block;
-}
-
- /* Popovers (to be used with popovers.js)
+}/* Popovers (to be used with popovers.js)
 -------------------------------------------------- */
-/* line 982, ../sass/_ratchet.scss */
+
 .popover {
   position: fixed;
   top: 55px;
@@ -1104,20 +989,19 @@ select {
   padding: 5px;
   margin-left: -146px;
   background-color: #555;
-  background-image: -webkit-linear-gradient(top, #555555 5%, #555555 6%, #111111 30%);
-  background-image: linear-gradient(to bottom, #555555 5%, #555555 6%, #111111 30%);
+  background-image: -webkit-linear-gradient(top, #555 5%, #555 6%, #111 30%);
+  background-image: linear-gradient(to bottom, #555 5%, #555 6%,#111 30%);
   border: 1px solid #111;
   border-radius: 6px;
   opacity: 0;
-  box-shadow: inset 0 1px 1px -1px white, 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 1px -1px #fff, 0 3px 10px rgba(0, 0, 0, .3);
   -webkit-transform: translate3d(0, -15px, 0);
-  transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
   -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 /* Caret on top of popover using CSS triangles (thanks to @chriscoyier for solution) */
-/* line 1006, ../sass/_ratchet.scss */
 .popover:before,
 .popover:after {
   position: absolute;
@@ -1126,8 +1010,6 @@ select {
   height: 0;
   content: '';
 }
-
-/* line 1013, ../sass/_ratchet.scss */
 .popover:before {
   top: -20px;
   margin-left: -21px;
@@ -1135,8 +1017,6 @@ select {
   border-bottom: 21px solid #111;
   border-left: 21px solid transparent;
 }
-
-/* line 1020, ../sass/_ratchet.scss */
 .popover:after {
   top: -19px;
   margin-left: -20px;
@@ -1146,7 +1026,6 @@ select {
 }
 
 /* Wrapper for a title and buttons */
-/* line 1029, ../sass/_ratchet.scss */
 .popover-header {
   display: -webkit-box;
   display: box;
@@ -1155,7 +1034,6 @@ select {
 }
 
 /* Centered title for popover */
-/* line 1037, ../sass/_ratchet.scss */
 .popover-header .title {
   position: absolute;
   top: 0;
@@ -1167,28 +1045,26 @@ select {
   line-height: 12px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
 }
 
 /* Generic style for all buttons in .popover-header */
-/* line 1052, ../sass/_ratchet.scss */
 .popover-header [class*="button"] {
   z-index: 25;
   font-size: 12px;
   line-height: 22px;
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
   background-color: #454545;
   background-image: -webkit-linear-gradient(top, #454545 0, #353535 100%);
   background-image: linear-gradient(to bottom, #454545 0, #353535 100%);
   border: 1px solid #111;
   -webkit-box-flex: 0;
-  box-flex: 0;
+          box-flex: 0;
 }
 
 /* Hacky way to right align buttons outside of flex-box system
    Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
-/* line 1070, ../sass/_ratchet.scss */
 .popover-header .title + [class*="button"]:last-child,
 .popover-header .button + [class*="button"]:last-child,
 .popover-header [class*="button"].pull-right {
@@ -1198,7 +1074,6 @@ select {
 }
 
 /* Active state for popover header buttons */
-/* line 1077, ../sass/_ratchet.scss */
 .popover-header .button:active {
   color: #fff;
   background-color: #0876b1;
@@ -1206,16 +1081,16 @@ select {
 
 /* Popover animation
 -------------------------------------------------- */
-/* line 1085, ../sass/_ratchet.scss */
+
 .popover.visible {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 /* Backdrop (used as invisible touch escape)
 -------------------------------------------------- */
-/* line 1094, ../sass/_ratchet.scss */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -1227,22 +1102,21 @@ select {
 
 /* Block level buttons in popovers
 -------------------------------------------------- */
+
 /* Positioning and giving darker border to look sharp against dark popover */
-/* line 1107, ../sass/_ratchet.scss */
 .popover .button-block {
   margin-bottom: 5px;
   border: 1px solid #111;
 }
 
 /* Remove extra margin on bottom of last button */
-/* line 1113, ../sass/_ratchet.scss */
 .popover .button-block:last-child {
   margin-bottom: 0;
 }
 
 /* Lists in popovers
 -------------------------------------------------- */
-/* line 1120, ../sass/_ratchet.scss */
+
 .popover .list {
   width: auto;
   max-height: 250px;
@@ -1254,12 +1128,10 @@ select {
   border: 1px solid #000;
   border-radius: 3px;
   -webkit-overflow-scrolling: touch;
-}
-
- /* Slider styles (to be used with sliders.js)
+}/* Slider styles (to be used with sliders.js)
 -------------------------------------------------- */
+
 /* Width/height of slider */
-/* line 1136, ../sass/_ratchet.scss */
 .slider,
 .slider > li {
   width: 100%;
@@ -1267,42 +1139,34 @@ select {
 }
 
 /* Outer wrapper for slider */
-/* line 1142, ../sass/_ratchet.scss */
 .slider {
   overflow: hidden;
   background-color: #000;
 }
 
 /* Inner wrapper for slider (width of all slides together) */
-/* line 1148, ../sass/_ratchet.scss */
 .slider > ul {
   position: relative;
-  font-size: 0;
-  /* Remove spaces from inline-block children */
+  font-size: 0; /* Remove spaces from inline-block children */
   white-space: nowrap;
   -webkit-transition: all 0 linear;
-  transition: all 0 linear;
+          transition: all 0 linear;
 }
 
 /* Individual slide */
-/* line 1157, ../sass/_ratchet.scss */
 .slider > ul > li {
   display: inline-block;
-  vertical-align: top;
-  /* Ensure that li always aligns to top */
+  vertical-align: top; /* Ensure that li always aligns to top */
   width: 100%;
   height: 100%;
 }
 
 /* Required reset of font-size to same as standard body */
-/* line 1165, ../sass/_ratchet.scss */
 .slider > ul > li > * {
   font-size: 14px;
-}
-
- /* Toggle styles (to be used with toggles.js)
+}/* Toggle styles (to be used with toggles.js)
 -------------------------------------------------- */
-/* line 1170, ../sass/_ratchet.scss */
+
 .toggle {
   position: relative;
   width: 75px;
@@ -1310,11 +1174,10 @@ select {
   background-color: #eee;
   border: 1px solid #bbb;
   border-radius: 20px;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, .1);
 }
 
 /* Text indicating "on" or "off". Default is "off" */
-/* line 1181, ../sass/_ratchet.scss */
 .toggle:before {
   position: absolute;
   right: 13px;
@@ -1327,7 +1190,6 @@ select {
 }
 
 /* Sliding handle */
-/* line 1193, ../sass/_ratchet.scss */
 .toggle-handle {
   position: absolute;
   top: -1px;
@@ -1336,75 +1198,63 @@ select {
   width: 28px;
   height: 28px;
   background-color: #fff;
-  background-image: -webkit-linear-gradient(top, white 0, #f2f2f2 100%);
-  background-image: linear-gradient(to bottom, white 0, #f2f2f2 100%);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
+  background-image: linear-gradient(to bottom, #fff 0, #f2f2f2 100%);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 100px;
   -webkit-transition: -webkit-transform 0.1s ease-in-out, border 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out, border 0.1s ease-in-out;
+                  transition: transform 0.1s ease-in-out, border 0.1s ease-in-out;
 }
 
 /* Active state for toggle */
-/* line 1210, ../sass/_ratchet.scss */
 .toggle.active {
   background-color: #19a8e4;
   background-image: -webkit-linear-gradient(top, #088cd4 0, #19a8e4 100%);
   background-image: linear-gradient(to bottom, #088cd4 0, #19a8e4 100%);
   border: 1px solid #096c9d;
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, .25);
 }
 
 /* Active state for toggle handle */
-/* line 1219, ../sass/_ratchet.scss */
 .toggle.active .toggle-handle {
   border-color: #0a76ad;
-  -webkit-transform: translate3d(48px, 0, 0);
-  transform: translate3d(48px, 0, 0);
+  -webkit-transform: translate3d(48px,0,0);
+          transform: translate3d(48px,0,0);
 }
 
 /* Change "off" to "on" for active state */
-/* line 1226, ../sass/_ratchet.scss */
 .toggle.active:before {
   right: auto;
   left: 15px;
   color: #fff;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
   content: "On";
-}
-
- /* Push styles (to be used with push.js)
+}/* Push styles (to be used with push.js)
 -------------------------------------------------- */
+
 /* Fade animation */
-/* line 1236, ../sass/_ratchet.scss */
 .content.fade {
   left: 0;
   opacity: 0;
   -webkit-transition: opacity .2s ease-in-out;
-  transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out;
 }
-
-/* line 1242, ../sass/_ratchet.scss */
 .content.fade.in {
   opacity: 1;
 }
 
 /* Slide animation */
-/* line 1247, ../sass/_ratchet.scss */
 .content.slide {
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
+          transform: translate3d(0, 0, 0);
+ -webkit-transition: -webkit-transform .25s ease-in-out;
+         transition:         transform .25s ease-in-out;
 }
-
-/* line 1253, ../sass/_ratchet.scss */
 .content.slide.left {
   -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
 }
-
-/* line 1257, ../sass/_ratchet.scss */
 .content.slide.right {
   -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
 }

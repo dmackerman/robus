@@ -7,10 +7,10 @@ var app = app || {};
   /* create our workouts collection */
   var workoutsCollection = new app.WorkoutsCollection();
 
+  /* instantiate our list of workouts, and the add workouts view */
   var workoutsView = new app.WorkoutsView({ collection: workoutsCollection });
 
-  $('.workouts-list').html(workoutsView.render().el); // adding people view in DOM.
+  $('.content').html(workoutsView.render().el);
 
-  var addWorkout = new app.AddWorkout({ collection: workoutsCollection });
 
 })(jQuery);
