@@ -13,8 +13,12 @@ var app = app || {};
     initialize: function() {
       /* initialize the container view for the list of workouts and pass it our collection */
       /* and fetch the data from our collection (which is in localStorage) */
-      app.Workouts.fetch();
-      this.workoutsListView = new app.WorkoutsListView({ collection: app.Workouts });
+      var that = this;
+      app.Workouts.fetch({
+        success: function() {
+          that.workoutsListView = new app.WorkoutsListView({ collection: app.Workouts });
+        }
+      });
     },
     render: function() {
       this.$el.html(this.template());

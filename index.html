@@ -53,6 +53,17 @@
       <div class="content"></div>
     </script>
 
+    <script id="exercises-view" type="text/x-handlebars-template">
+      <header class="bar-title">
+       <div class="header-animated">
+         <div class="button-prev">Back</div>
+         <h1 class="title">Exercises for</h1>
+         <div class="button button-add">Add</div>
+        </div>
+      </header>
+      <div class="content"></div>
+    </script>
+
     <script id="workout-item" type="text/x-handlebars-template">
       <a href="#workouts/{{slug}}">
         {{name}}
@@ -61,17 +72,12 @@
       </a>
     </script>
 
-    <script id="workout-item-detail" type="text/x-handlebars-template">
-      <h3>{{name}}</h3>
-      <ul>
-      {{#each exercises}}
-        <li>{{name}}</li>
-      {{/each}}
-      </ul>
-    </script>
-
-    <script id="workout-item-edit" type="text/x-handlebars-template">
-      <input type="text" value="<%= name %>" />
+    <script id="exercise-item" type="text/x-handlebars-template">
+      <a href="#exercises/{{slug}}">
+        {{name}}
+        <a style="margin-right: 25px;" class="button-negative delete">Delete</a>
+        <span class="chevron"></span>
+      </a>
     </script>
 
     <script id="add-workout-view" type="text/x-handlebars-template">

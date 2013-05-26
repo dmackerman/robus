@@ -66,6 +66,9 @@ module.exports = function(grunt) {
     // uglify to concat & minify
     uglify: {
       dist: {
+        options: {
+          beautify: true
+        },
         files: {
           'js/app.min.js': [
             "js/lib/modernizr.custom.15848.js",
@@ -77,15 +80,25 @@ module.exports = function(grunt) {
             "components/backbone/backbone-min.js",
             "js/lib/backbone.localstorage.js",
             "js/lib/junior.js",
+
             "js/models/Workout.js",
+            "js/models/Exercise.js",
+
             "js/collections/Workouts.js",
+            "js/collections/Exercises.js",
+
             "js/views/AddWorkout.js",
+
             "js/views/Workout.js",
-            "js/views/WorkoutDetail.js",
-            "js/views/Workouts.js",
             "js/views/WorkoutsListView.js",
             "js/views/WorkoutsView.js",
+
+            "js/views/Exercise.js",
+            "js/views/ExerciseListView.js",
+            "js/views/ExercisesView.js",
+
             "js/views/HomeView.js",
+
             "js/routers/Router.js",
             "js/app.js"]
         }

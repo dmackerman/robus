@@ -12,7 +12,7 @@ var app = app || {};
       'workouts/:query': 'workoutDetails'
     },
     initialize: function() {
-
+      console.log('app init');
     },
 
     home: function(){
@@ -26,7 +26,8 @@ var app = app || {};
     },
 
     workoutDetails: function() {
-
+      var exercisesView = new app.ExercisesView();
+      this.renderView(exercisesView);
     },
 
     addWorkout: function() {

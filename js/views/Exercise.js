@@ -3,15 +3,15 @@ var app = app || {};
 (function($) {
   'use strict';
 
-  /* the individual list item in the workouts list */
-  app.WorkoutView = Jr.View.extend({
+  /* detailed view for a workout */
+  app.ExerciseView = Backbone.View.extend({
     tagName: 'li',
-    template: Handlebars.compile($('#workout-item').html()),
+    template: Handlebars.compile($('#exercise-item').html()),
     events: {
-      'click .delete': 'deleteWorkout',
+      // 'click span': 'viewWorkoutDetail',
+      // 'click .delete': 'deleteExercise',
     },
     initialize: function() {
-      /* re-render the view when the model changes (ie. edit or delete) */
       this.model.on('change', this.render, this);
       this.model.on('destroy', this.remove, this);
     },
@@ -19,7 +19,7 @@ var app = app || {};
       this.$el.html(this.template(this.model.toJSON()));
       return this;
     },
-    deleteWorkout: function() {
+    deleteExercise: function() {
       this.model.destroy();
     },
     remove: function() {

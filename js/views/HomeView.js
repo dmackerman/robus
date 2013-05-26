@@ -14,10 +14,9 @@ var app = app || {};
       return this;
     },
     showWorkouts: function() {
-      Jr.Navigator.navigate('home', {
+      Jr.Navigator.navigate('workouts', {
         trigger: true,
         animation: {
-          // This time slide to the right because we are going back
           type: Jr.Navigator.animations.SLIDE_STACK,
           direction: Jr.Navigator.directions.LEFT
         }
