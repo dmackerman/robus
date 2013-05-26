@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 module.exports = function(grunt) {
 
   // load all grunt tasks
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       /* watch and see if our javascript files change, or new packages are installed */
       js: {
         files: ['js/**/*.js', '!js/app.min.js', 'components/**/*.js'],
-        tasks: ['uglify']
+        tasks: ['uglify', 'jshint']
       },
       /* watch our files for change, reload */
       livereload: {
@@ -83,10 +83,8 @@ module.exports = function(grunt) {
       }
     },
 
-    jsonlint: {
-      sample: {
-        src: [ 'js/**/*.js', '!js/app.min.js' ]
-      }
+    jshint: {
+      all: ['js/**/*.js', '!js/**/*app.min.js']
     }
 
   });
