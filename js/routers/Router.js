@@ -16,7 +16,9 @@ var app = app || {};
     },
 
     home: function(){
-      var homeView = new app.HomeView();
+      var homeView = new app.HomeView({
+        collection: app.Workouts
+      });
       this.renderView(homeView);
     },
 

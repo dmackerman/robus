@@ -27,7 +27,7 @@ var app = app || {};
       return this;
     },
     onClickButtonPrev: function() {
-      var homeView = new app.HomeView();
+      var homeView = new app.HomeView({ collection: app.Workouts });
       app.Router.renderView(homeView);
     },
     onClickButtonAdd: function() {

@@ -10,8 +10,11 @@ var app = app || {};
       'click a[data-action="workouts"]': "showWorkouts",
       "click .clear-localstorage": "clearLocalStorage"
     },
+    initialize: function() {
+
+    },
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html(this.template({ numberOfWorkouts: this.collection.length }));
       return this;
     },
     showWorkouts: function() {
@@ -20,7 +23,6 @@ var app = app || {};
     },
     clearLocalStorage: function() {
       localStorage.clear();
-      alert('cleared localStorage');
     }
   });
 
