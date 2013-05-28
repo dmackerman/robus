@@ -95,6 +95,7 @@ module.exports = function(grunt) {
             "js/views/ExercisesView.js",
             "js/views/ExerciseDetailView.js",
 
+            "js/views/Set.js",
             "js/views/SetView.js",
 
             "js/views/Workout.js",

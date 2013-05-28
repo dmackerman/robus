@@ -5,14 +5,15 @@ var app = app || {};
 
   /* detailed view for a workout */
   app.SetView = Backbone.View.extend({
-    tagName: 'li',
-    template: Handlebars.compile($('#set-item').html()),
+    tagName: 'ul',
+    className: 'list inset',
     initialize: function() {
-      this.model.on('change', this.render, this);
-      this.model.on('destroy', this.removeExercise, this);
+
     },
     render: function() {
-      this.$el.html(this.template());
+      /* render an initial set view */
+      var setView = new app.Set({ model: this.model });
+      this.$el.append(setView.render().el);
       return this;
     }
   });
