@@ -8,8 +8,8 @@ var app = app || {};
     tagName: 'li',
     template: Handlebars.compile($('#exercise-item').html()),
     events: {
-      // 'click span': 'viewWorkoutDetail',
-      // 'click .delete': 'deleteExercise',
+      'click': 'showExercises',
+      'click .delete': 'deleteExercise'
     },
     initialize: function() {
       this.model.on('change', this.render, this);
@@ -24,6 +24,9 @@ var app = app || {};
     },
     remove: function() {
       this.$el.remove();
+    },
+    showExercises: function() {
+      console.log('ya clicked an exercise');
     }
   });
 

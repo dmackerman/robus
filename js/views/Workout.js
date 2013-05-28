@@ -8,6 +8,7 @@ var app = app || {};
     tagName: 'li',
     template: Handlebars.compile($('#workout-item').html()),
     events: {
+      'click' : 'showWorkout',
       'click .delete': 'deleteWorkout',
     },
     initialize: function() {
@@ -24,6 +25,16 @@ var app = app || {};
     },
     remove: function() {
       this.$el.remove();
+    },
+    showWorkout: function() {
+      /* create an Exercise view */
+      var workoutName = this.model.get('name');
+      var exercisesView = new app.ExercisesView({
+        workout: workoutName
+      });
+
+      app.Router.renderView(exercisesView);
+
     }
   });
 

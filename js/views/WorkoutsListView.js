@@ -16,9 +16,6 @@ var app = app || {};
       this.collection.each(this.addWorkout, this);
       return this;
     },
-    onChanged: function() {
-      console.log('change');
-    },
     addWorkout: function(workout) {
       var workoutView = new app.WorkoutView({
         model: workout

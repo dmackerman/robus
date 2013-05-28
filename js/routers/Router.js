@@ -8,11 +8,11 @@ var app = app || {};
     routes: {
       'home': 'home',
       'add': 'addWorkout',
+      'add-exercise' : 'addExercise',
       'workouts': 'workouts',
       'workouts/:query': 'workoutDetails'
     },
     initialize: function() {
-      console.log('app init');
     },
 
     home: function(){
@@ -25,23 +25,31 @@ var app = app || {};
       this.renderView(workoutsView);
     },
 
-    workoutDetails: function() {
-      var exercisesView = new app.ExercisesView();
-      this.renderView(exercisesView);
-    },
+    // workoutDetails: function(options) {
+    //   var exercisesView = new app.ExercisesView();
+    //   this.renderView(exercisesView);
+    // },
 
-    addWorkout: function() {
-      var addWorkoutView = new app.AddWorkoutView({
-        collection: app.Workouts
+    // addWorkout: function(options) {
+    //   var addWorkoutView = new app.AddWorkoutView({
+    //     collection: app.Workouts,
+    //   });
+    //   this.renderView(addWorkoutView);
+    // },
+
+    addExercise: function(options) {
+      var addExerciseView = new app.AddExerciseView({
+        collection: app.Exercises
       });
-      this.renderView(addWorkoutView);
+      this.renderView(addExerciseView);
     }
 
 
   });
 
   // Initiate the router
-  var app_router = new app.AppRouter();
+  app.Router = new app.AppRouter();
+
   Backbone.history.start();
 
 })();

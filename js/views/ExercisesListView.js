@@ -7,11 +7,15 @@ var app = app || {};
   app.ExercisesListView = Backbone.View.extend({
     tagName: 'ul',
     className: 'list',
-    initialize: function() {
-      this.listenTo(this.collection, 'add', this.addWorkout);
+    initialize: function(options) {
+      this.exercisesInWorkout = this.collection.where({
+        workout: options.workout
+      });
+      this.listenTo(this.collection, 'add', this.addExercise);
     },
     render: function() {
-      this.collection.each(this.addWorkout, this);
+      /* we only want to render the exercises that match the current workout */
+      _.each(this.exercisesInWorkout, this.addExercise, this);
       return this;
     },
     addExercise: function(exercise) {

@@ -36,13 +36,10 @@ var app = app || {};
       });
     },
     onClickButtonAdd: function() {
-      Jr.Navigator.navigate('add', {
-        trigger: true,
-        animation: {
-          type: Jr.Navigator.animations.SLIDE_STACK,
-          direction: Jr.Navigator.directions.UP
-        }
+      var addWorkoutView = new app.AddWorkoutView({
+        collection: app.Workouts,
       });
+      app.Router.renderView(addWorkoutView);
     }
   });
 

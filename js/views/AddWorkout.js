@@ -6,7 +6,8 @@ var app = app || {};
   app.AddWorkoutView = Backbone.View.extend({
     template: Handlebars.compile($('#add-workout-view').html()),
     events: {
-      'submit': 'submit' // binding submit click to submit function..
+      'click .button-block': 'submit',
+      'click .button-close': 'onCloseButton'
     },
     initialize: function() {
 
@@ -17,21 +18,28 @@ var app = app || {};
     },
     submit: function(e) {
       e.preventDefault(); // preventing default submission..
+
       var newWorkoutName = $(this.el).find('input[type=text]').val();
       var workout = new app.Workout({
         name: newWorkoutName,
-        slug: 'tits'
+        slug: newWorkoutName.toLowerCase()
       });
+
       this.collection.create(workout);
-      console.log(this.collection);
-      Jr.Navigator.navigate('workouts', {
-        trigger: true,
-        animation: {
-          type: Jr.Navigator.animations.SLIDE_STACK,
-          direction: Jr.Navigator.directions.DOWN
-        }
+
+      var workoutsView = new app.WorkoutsView({
+        collection: app.Workouts,
       });
+      app.Router.renderView(workoutsView);
+
+    },
+    onCloseButton: function() {
+      var workoutsView = new app.WorkoutsView({
+        collection: app.Workouts,
+      });
+      app.Router.renderView(workoutsView);
     }
+
   });
 
 })(Zepto);

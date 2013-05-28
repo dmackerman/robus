@@ -88,14 +88,15 @@ module.exports = function(grunt) {
             "js/collections/Exercises.js",
 
             "js/views/AddWorkout.js",
+            "js/views/AddExercise.js",
+
+            "js/views/Exercise.js",
+            "js/views/ExercisesListView.js",
+            "js/views/ExercisesView.js",
 
             "js/views/Workout.js",
             "js/views/WorkoutsListView.js",
             "js/views/WorkoutsView.js",
-
-            "js/views/Exercise.js",
-            "js/views/ExerciseListView.js",
-            "js/views/ExercisesView.js",
 
             "js/views/HomeView.js",
 
