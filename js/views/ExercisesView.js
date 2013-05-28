@@ -10,18 +10,17 @@ var app = app || {};
       'click .button-prev': 'onClickButtonPrev',
       'click .button-add': 'onClickButtonAdd'
     },
-
     /* pass in options so we can get variables from the workouts list */
     initialize: function(options) {
-      /* initialize the container view for the list of workouts and pass it our collection */
+      /* initialize the container view for the list of exercises and pass it our collection */
       /* and fetch the data from our collection (which is in localStorage) */
-      var that = this;
-      that.workoutName = options.workout;
+      var me = this;
+      me.workoutName = options.workout;
       app.Exercises.fetch({
         success: function() {
-          that.exercisesListView = new app.ExercisesListView({
+          me.exercisesListView = new app.ExercisesListView({
             collection: app.Exercises,
-            workout: that.workoutName
+            workout: me.workoutName
           });
         }
       });
@@ -35,6 +34,7 @@ var app = app || {};
     onClickButtonPrev: function() {
       var workoutsView = new app.WorkoutsView();
       app.Router.renderView(workoutsView);
+      this.remove();
     },
     onClickButtonAdd: function() {
       var addExerciseView = new app.AddExerciseView({
@@ -42,6 +42,7 @@ var app = app || {};
         collection: app.Exercises
       });
       app.Router.renderView(addExerciseView);
+      this.remove();
     }
   });
 

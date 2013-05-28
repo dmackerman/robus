@@ -4,7 +4,7 @@ var app = app || {};
   'use strict';
 
   /* the individual list item in the workouts list */
-  app.WorkoutView = Jr.View.extend({
+app.WorkoutView = Jr.View.extend({
     tagName: 'li',
     template: Handlebars.compile($('#workout-item').html()),
     events: {
@@ -22,7 +22,6 @@ var app = app || {};
     },
     deleteWorkout: function(event) {
       this.model.destroy();
-      return false;
     },
     removeWorkout: function() {
       this.$el.remove();
@@ -30,12 +29,12 @@ var app = app || {};
     showWorkout: function() {
       console.log('ya clicked a workout');
       /* create an Exercise view */
-      var workoutName = this.model.get('name');
       var exercisesView = new app.ExercisesView({
-        workout: workoutName
+        workout: this.model.get('name'),
+        collection: app.Exercises
       });
-
       app.Router.renderView(exercisesView);
+      this.remove();
 
     }
   });

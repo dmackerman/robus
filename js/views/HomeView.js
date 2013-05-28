@@ -3,12 +3,11 @@ var app = app || {};
 (function($) {
   'use strict';
 
-  /* detailed view for a workout */
-  app.HomeView = Jr.View.extend({
+  app.HomeView = Backbone.View.extend({
     template: Handlebars.compile($('#home-view').html()),
     events: {
-      'click a[data-action="workouts"]': "showWorkouts",
-      "click .clear-localstorage": "clearLocalStorage"
+      'click #show-workouts-list': 'showWorkouts',
+      "click #clear-localstorage": "clearLocalStorage"
     },
     initialize: function() {
 
@@ -18,10 +17,16 @@ var app = app || {};
       return this;
     },
     showWorkouts: function() {
+      console.log('show workouts');
       var workoutsView = new app.WorkoutsView();
       app.Router.renderView(workoutsView);
+
+      /* cleanup the view after we move away */
+      this.remove();
     },
-    clearLocalStorage: function() {
+    clearLocalStorage: function(event) {
+      console.log('cleared localstorage');
+      event.preventDefault();
       localStorage.clear();
     }
   });

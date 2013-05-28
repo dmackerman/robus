@@ -8,8 +8,9 @@ var app = app || {};
     tagName: 'ul',
     className: 'list',
     initialize: function(options) {
+      this.workout = options.workout;
       this.exercisesInWorkout = this.collection.where({
-        workout: options.workout
+        workout: this.workout
       });
       this.listenTo(this.collection, 'add', this.addExercise);
     },
@@ -20,7 +21,8 @@ var app = app || {};
     },
     addExercise: function(exercise) {
       var exerciseView = new app.ExerciseView({
-        model: exercise
+        model: exercise,
+        workout: this.workout
       });
       this.$el.append(exerciseView.render().el);
     }

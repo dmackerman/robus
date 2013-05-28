@@ -10,6 +10,7 @@ var app = app || {};
       'click .button-close': 'onCloseButton'
     },
     initialize: function(opts) {
+      /* grab the workout that we want to add this exercise to */
       this.workout = opts.workout;
     },
     render: function() {
@@ -31,6 +32,7 @@ var app = app || {};
 
       var exercisesView = new app.ExercisesView({
         collection: app.Exercises,
+        workout: this.workout
       });
 
       app.Router.renderView(exercisesView);

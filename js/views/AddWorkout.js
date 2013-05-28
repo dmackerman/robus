@@ -27,9 +27,7 @@ var app = app || {};
 
       this.collection.create(workout);
 
-      var workoutsView = new app.WorkoutsView({
-        collection: app.Workouts,
-      });
+      var workoutsView = new app.WorkoutsView({ collection: app.Workouts });
       app.Router.renderView(workoutsView);
 
     },

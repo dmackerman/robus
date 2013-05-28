@@ -29,12 +29,12 @@ var app = app || {};
     onClickButtonPrev: function() {
       var homeView = new app.HomeView({ collection: app.Workouts });
       app.Router.renderView(homeView);
+      this.remove();
     },
     onClickButtonAdd: function() {
-      var addWorkoutView = new app.AddWorkoutView({
-        collection: app.Workouts,
-      });
+      var addWorkoutView = new app.AddWorkoutView({ collection: app.Workouts });
       app.Router.renderView(addWorkoutView);
+      this.remove();
     }
   });
 

@@ -21,6 +21,7 @@ var app = app || {};
         model: workout
       });
       this.$el.append(workoutView.render().el);
+      this.remove();
     }
   });
 
