@@ -13,7 +13,7 @@ var app = app || {};
     },
     initialize: function() {
       this.model.on('change', this.render, this);
-      this.model.on('destroy', this.remove, this);
+      this.model.on('destroy', this.removeExercise, this);
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
@@ -22,7 +22,7 @@ var app = app || {};
     deleteExercise: function() {
       this.model.destroy();
     },
-    remove: function() {
+    removeExercise: function() {
       this.$el.remove();
     },
     showExercises: function() {

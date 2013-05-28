@@ -8,25 +8,27 @@ var app = app || {};
     tagName: 'li',
     template: Handlebars.compile($('#workout-item').html()),
     events: {
-      'click' : 'showWorkout',
+      'click': 'showWorkout',
       'click .delete': 'deleteWorkout',
     },
     initialize: function() {
       /* re-render the view when the model changes (ie. edit or delete) */
       this.model.on('change', this.render, this);
-      this.model.on('destroy', this.remove, this);
+      this.model.on('destroy', this.removeWorkout, this);
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
       return this;
     },
-    deleteWorkout: function() {
+    deleteWorkout: function(event) {
       this.model.destroy();
+      return false;
     },
-    remove: function() {
+    removeWorkout: function() {
       this.$el.remove();
     },
     showWorkout: function() {
+      console.log('ya clicked a workout');
       /* create an Exercise view */
       var workoutName = this.model.get('name');
       var exercisesView = new app.ExercisesView({

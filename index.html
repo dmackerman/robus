@@ -34,6 +34,7 @@
             </a>
           </li>
         </ul>
+        <div class="button button-block button-negative clear-localstorage">Clear localStorage</div>
       </div>
     </script>
 
@@ -60,17 +61,17 @@
     </script>
 
     <script id="workout-item" type="text/x-handlebars-template">
-      <a href="#workouts/">
+      <a href="#">
         {{name}}
-        <a style="margin-right: 25px;" class="button-negative delete">Delete</a>
+        <a style="margin-right: 30px;" class="button-negative delete">Delete</a>
         <span class="chevron"></span>
       </a>
     </script>
 
     <script id="exercise-item" type="text/x-handlebars-template">
-      <a href="#exercises/{{slug}}">
+      <a href="#">
         {{name}}
-        <a style="margin-right: 25px;" class="button-negative delete">Delete</a>
+        <a style="margin-right: 30px;" class="button-negative delete">Delete</a>
         <span class="chevron"></span>
       </a>
     </script>

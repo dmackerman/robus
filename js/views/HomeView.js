@@ -7,20 +7,20 @@ var app = app || {};
   app.HomeView = Jr.View.extend({
     template: Handlebars.compile($('#home-view').html()),
     events: {
-      'click a[data-action="workouts"]': "showWorkouts"
+      'click a[data-action="workouts"]': "showWorkouts",
+      "click .clear-localstorage": "clearLocalStorage"
     },
     render: function() {
       this.$el.html(this.template());
       return this;
     },
     showWorkouts: function() {
-      Jr.Navigator.navigate('workouts', {
-        trigger: true,
-        animation: {
-          type: Jr.Navigator.animations.SLIDE_STACK,
-          direction: Jr.Navigator.directions.LEFT
-        }
-      });
+      var workoutsView = new app.WorkoutsView();
+      app.Router.renderView(workoutsView);
+    },
+    clearLocalStorage: function() {
+      localStorage.clear();
+      alert('cleared localStorage');
     }
   });
 

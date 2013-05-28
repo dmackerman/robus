@@ -27,21 +27,14 @@ var app = app || {};
       });
     },
     render: function() {
-      this.$el.html(this.template({
-        workoutName: this.workoutName
-      }));
+      this.$el.html(this.template({ workoutName: this.workoutName }));
       /* find our .content block within the template, and render the view */
       this.$el.find('.content').html(this.exercisesListView.render().el);
       return this;
     },
     onClickButtonPrev: function() {
-      Jr.Navigator.navigate('workouts', {
-        trigger: true,
-        animation: {
-          type: Jr.Navigator.animations.SLIDE_STACK,
-          direction: Jr.Navigator.directions.RIGHT
-        }
-      });
+      var workoutsView = new app.WorkoutsView();
+      app.Router.renderView(workoutsView);
     },
     onClickButtonAdd: function() {
       var addExerciseView = new app.AddExerciseView({
