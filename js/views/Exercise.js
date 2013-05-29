@@ -23,7 +23,10 @@ var app = app || {};
       this.model.destroy();
     },
     removeExercise: function() {
-      this.$el.remove();
+      var me = this;
+      me.$el.animate({ opacity: 0 }, 250, 'ease-out', function() {
+        me.$el.remove();
+      });
     },
     showExercises: function() {
       if (!$(event.target).hasClass('delete')) {

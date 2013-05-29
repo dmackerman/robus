@@ -25,7 +25,10 @@ app.WorkoutView = Jr.View.extend({
       this.model.destroy();
     },
     removeWorkout: function() {
-      this.$el.remove();
+      var me = this;
+      me.$el.animate({ opacity: 0 }, 250, 'ease-out', function() {
+        me.$el.remove();
+      });
     },
     showWorkout: function(event) {
       if (!$(event.target).hasClass('delete')) {
