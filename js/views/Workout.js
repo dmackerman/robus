@@ -9,12 +9,10 @@ app.WorkoutView = Jr.View.extend({
     template: Handlebars.compile($('#workout-item').html()),
     events: {
       'click': 'showWorkout',
-      'click .delete': 'deleteWorkout',
-      // 'click': 'onWorkoutClick'
+      'click .delete': 'deleteWorkout'
     },
     initialize: function() {
       /* re-render the view when the model changes (ie. edit or delete) */
-      this.model.on('change', this.render, this);
       this.model.on('destroy', this.removeWorkout, this);
     },
     render: function() {
@@ -25,10 +23,10 @@ app.WorkoutView = Jr.View.extend({
       this.model.destroy();
     },
     removeWorkout: function() {
-      var me = this;
-      me.$el.animate({ opacity: 0 }, 250, 'ease-out', function() {
-        me.$el.remove();
-      });
+      // var me = this;
+      // me.$el.animate({ opacity: 0 }, 250, 'ease-out', function() {
+      this.$el.remove();
+      // });
     },
     showWorkout: function(event) {
       if (!$(event.target).hasClass('delete')) {

@@ -17,7 +17,7 @@ var app = app || {};
       return this;
     },
     showWorkouts: function() {
-      var workoutsView = new app.WorkoutsView();
+      var workoutsView = new app.WorkoutsView({ collection: app.Workouts });
       app.Router.renderView(workoutsView);
 
       /* cleanup the view after we move away */

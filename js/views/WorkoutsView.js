@@ -4,7 +4,7 @@ var app = app || {};
   'use strict';
 
   /* the container view that contains the child view: app.WorkoutsListView */
-  app.WorkoutsView = Jr.View.extend({
+  app.WorkoutsView = Backbone.View.extend({
     template: Handlebars.compile($('#workouts-view').html()),
     events: {
       'click .button-prev': 'onClickButtonPrev',
@@ -22,7 +22,6 @@ var app = app || {};
     },
     render: function() {
       this.$el.html(this.template());
-      /* find our .content block within the template, and render the view */
       this.$el.find('.content').html(this.workoutsListView.render().el);
       return this;
     },

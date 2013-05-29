@@ -21,8 +21,7 @@ var app = app || {};
 
       var newWorkoutName = $(this.el).find('input[type=text]').val();
       var workout = new app.Workout({
-        name: newWorkoutName,
-        slug: newWorkoutName.toLowerCase()
+        name: newWorkoutName
       });
 
       this.collection.create(workout);
