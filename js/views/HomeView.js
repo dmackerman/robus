@@ -17,7 +17,6 @@ var app = app || {};
       return this;
     },
     showWorkouts: function() {
-      console.log('show workouts');
       var workoutsView = new app.WorkoutsView();
       app.Router.renderView(workoutsView);
 
@@ -25,7 +24,6 @@ var app = app || {};
       this.remove();
     },
     clearLocalStorage: function(event) {
-      console.log('cleared localstorage');
       event.preventDefault();
       localStorage.clear();
     }

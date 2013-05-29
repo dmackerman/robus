@@ -1,4 +1,54 @@
 @import "ratchet";
-@import "junior";
 
-/* yeah */
+/* general */
+.intro {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+/* sets listing, inputs */
+.sets-list {
+  li {
+    text-align: center;
+    padding: 15px;
+  }
+  label, input {
+    display: inline-block;
+  }
+  input {
+    text-align: center;
+    font-size: 20px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 11px;
+    padding-bottom: 5px;
+  }
+  .weight {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+  }
+  .reps {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+  }
+  .by {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #999;
+    padding: 3px 10px 0 10px;
+
+  }
+  .add-set {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 30px;
+    padding: 9px 20px;
+  }
+}

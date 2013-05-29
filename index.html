@@ -80,23 +80,23 @@
 
     <script id="set-item" type="text/x-handlebars-template">
       <form>
-        <div class="input-group">
-          <div class="input-row">
-            <label>Weight</label>
-            <input type="text" placeholder="Mister Ratchet">
-          </div>
-          <div class="input-row">
-            <label>Reps</label>
-            <input type="email" placeholder="ratchetframework@gmail.com">
-          </div>
+        <div class="weight">
+          <label for="weight">Weight</label>
+          <input name="weight" type="tel" />
         </div>
+        <span class="by">x</span>
+        <div class="reps">
+          <label for="reps">Reps</label>
+          <input name="reps" type="tel" />
+        </div>
+        <div class="button-positive add-set">+</div>
       </form>
     </script>
 
     <script id="exercise-item" type="text/x-handlebars-template">
       <a href="#">
         <span class="exercise-name">{{name}}</span>
-        <div id="delete-exercise" style="margin-right: 30px;" class="button-negative">Delete</div>
+        <div style="margin-right: 30px;" class="button-negative delete">Delete</div>
         <span class="chevron"></span>
       </a>
     </script>
@@ -104,7 +104,7 @@
     <script id="add-workout-view" type="text/x-handlebars-template">
       <header class="bar-title">
        <div class="header-animated">
-         <h1 class="title">Add New Workout</h1>
+         <h1 class="title">New Workout</h1>
          <div class="button button-close">Close</div>
         </div>
       </header>
@@ -119,13 +119,14 @@
     <script id="add-exercise-view" type="text/x-handlebars-template">
       <header class="bar-title">
        <div class="header-animated">
-         <h1 class="title">Add New Exercise</h1>
+         <h1 class="title">New Exercise</h1>
          <div class="button button-close">Close</div>
         </div>
       </header>
       <div class="content content-padded">
+        <p class="intro">You're adding a new exercise to <strong>{{workoutName}}</strong></p>
         <form id="addWorkout" action="#">
-          <input type="text" placeholder="Exercise Name" required>
+          <input type="text" placeholder="Exercise Name" required />
           <a class="button-positive button-block" type="submit">Add Exercise</a>
         </form>
       </div>

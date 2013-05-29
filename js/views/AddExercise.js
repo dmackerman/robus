@@ -14,7 +14,7 @@ var app = app || {};
       this.workout = opts.workout;
     },
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html(this.template({ workoutName: this.workout }));
       return this;
     },
     submit: function(e) {
@@ -40,10 +40,11 @@ var app = app || {};
     },
 
     onCloseButton: function() {
-      // var exerciseView = new app.ExerciseView({
-      //   collection: app.Exercises,
-      // });
-      // app.Router.renderView(exerciseView);
+      var exercisesView = new app.ExercisesView({
+        collection: app.Exercises,
+        workout: this.workout
+      });
+      app.Router.renderView(exercisesView);
     }
 
   });

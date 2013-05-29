@@ -10,6 +10,7 @@ app.WorkoutView = Jr.View.extend({
     events: {
       'click': 'showWorkout',
       'click .delete': 'deleteWorkout',
+      // 'click': 'onWorkoutClick'
     },
     initialize: function() {
       /* re-render the view when the model changes (ie. edit or delete) */
@@ -26,16 +27,16 @@ app.WorkoutView = Jr.View.extend({
     removeWorkout: function() {
       this.$el.remove();
     },
-    showWorkout: function() {
-      console.log('ya clicked a workout');
-      /* create an Exercise view */
-      var exercisesView = new app.ExercisesView({
-        workout: this.model.get('name'),
-        collection: app.Exercises
-      });
-      app.Router.renderView(exercisesView);
-      this.remove();
-
+    showWorkout: function(event) {
+      if (!$(event.target).hasClass('delete')) {
+        /* create an Exercise view */
+        var exercisesView = new app.ExercisesView({
+          workout: this.model.get('name'),
+          collection: app.Exercises
+        });
+        app.Router.renderView(exercisesView);
+        this.remove();
+      }
     }
   });
 

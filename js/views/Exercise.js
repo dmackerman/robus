@@ -9,7 +9,7 @@ var app = app || {};
     template: Handlebars.compile($('#exercise-item').html()),
     events: {
       'click': 'showExercises',
-      'click #delete-exercise': 'deleteExercise'
+      'click .delete': 'deleteExercise'
     },
     initialize: function() {
       this.model.on('change', this.render, this);
@@ -20,22 +20,21 @@ var app = app || {};
       return this;
     },
     deleteExercise: function(event) {
-      event.stopPropagation();
-      console.log(event.isPropagationStopped());
       this.model.destroy();
     },
     removeExercise: function() {
       this.$el.remove();
     },
     showExercises: function() {
-      console.log('ya clicked an exercise');
-      /* create an ExerciseDetailView view */
-      var exerciseDetailView = new app.ExerciseDetailView({
-        model: this.model,
-        workout: this.model.get('workout')
-      });
-      app.Router.renderView(exerciseDetailView);
-      this.remove();
+      if (!$(event.target).hasClass('delete')) {
+        /* create an ExerciseDetailView view */
+        var exerciseDetailView = new app.ExerciseDetailView({
+          model: this.model,
+          workout: this.model.get('workout')
+        });
+        app.Router.renderView(exerciseDetailView);
+        this.remove();
+      }
     }
   });
 
