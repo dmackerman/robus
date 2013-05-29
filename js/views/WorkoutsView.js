@@ -19,6 +19,7 @@ var app = app || {};
           me.workoutsListView = new app.WorkoutsListView({ collection: app.Workouts });
         }
       });
+
     },
     render: function() {
       this.$el.html(this.template());

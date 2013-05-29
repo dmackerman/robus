@@ -13,4 +13,7 @@ var app = app || {};
     }
   });
 
+  /* fetch our exercises */
+  app.Exercises.fetch();
+
 })(Zepto);

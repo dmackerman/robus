@@ -20,6 +20,8 @@ var app = app || {};
       return this;
     },
     addWorkout: function(workout) {
+      var numberOfExercisesInWorkout = app.Exercises.where({ workout: workout.get('name') }).length;
+      workout.set('exercisesInWorkout', numberOfExercisesInWorkout);
       var workoutView = new app.WorkoutView({
         model: workout
       });

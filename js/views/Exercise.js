@@ -11,11 +11,11 @@ var app = app || {};
       'click': 'showExercise',
       'click .delete': 'deleteExercise'
     },
-    initialize: function() {
+    initialize: function(options) {
       this.model.on('destroy', this.removeExercise, this);
     },
     render: function() {
-      this.$el.html(this.template(this.model.toJSON()));
+      this.$el.html(this.template(this.model.toJSON({ exercisesInWorkout: this.exercisesInWorkout })));
       return this;
     },
     deleteExercise: function() {

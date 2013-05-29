@@ -11,9 +11,10 @@ app.WorkoutView = Jr.View.extend({
       'click': 'showWorkout',
       'click .delete': 'deleteWorkout'
     },
-    initialize: function() {
+    initialize: function(options) {
       /* re-render the view when the model changes (ie. edit or delete) */
       this.model.on('destroy', this.removeWorkout, this);
+      // this.exercisesInThisWorkout = options.numberOfExercisesInWorkout;
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
@@ -23,10 +24,7 @@ app.WorkoutView = Jr.View.extend({
       this.model.destroy();
     },
     removeWorkout: function() {
-      // var me = this;
-      // me.$el.animate({ opacity: 0 }, 250, 'ease-out', function() {
       this.$el.remove();
-      // });
     },
     showWorkout: function(event) {
       if (!$(event.target).hasClass('delete')) {
