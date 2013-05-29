@@ -78,6 +78,7 @@ module.exports = function(grunt) {
             "components/underscore/underscore-min.js",
             "js/lib/lodash.min.js",
             "components/backbone/backbone.js",
+            "components/backbone-relational/backbone-relational.js",
             "js/lib/backbone.localstorage.js",
             "js/lib/junior.js",
 
