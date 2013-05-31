@@ -41,11 +41,10 @@ var app = app || {};
     },
 
     addSetView: function(set) {
-
       /* for every Set that's in the Exercise, we create the view and pass it's data */
-
       /* create an individual SetView */
       var setView = new app.SetView({
+        model: set,
         weight: set.get('weight'),
         reps: set.get('reps')
       });

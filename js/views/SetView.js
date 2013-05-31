@@ -13,10 +13,10 @@ var app = app || {};
       'keypress .set-data': 'saveSetData',
     },
     initialize: function() {
-
+      console.log(this.model);
     },
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html(this.template(this.model.toJSON()));
       return this;
     },
 
