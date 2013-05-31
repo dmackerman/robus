@@ -15,12 +15,12 @@ var app = app || {};
       this.exerciseName = this.model.get('name');
       this.workout = this.model.get('workout');
 
-      /* generate our first SetView */
-      this.setView = new app.SetView({ model: this.model });
+      /* generate our first SetListView */
+      this.setView = new app.SetListView({ model: this.model });
     },
     render: function() {
-      this.$el.html(this.template({ exerciseName: this.exerciseName }));
       /* find our .content block within the template, and render the view */
+      this.$el.html(this.template({ exerciseName: this.exerciseName }));
       this.$el.find('.content').html(this.setView.render().el);
       return this;
     },
