@@ -19,38 +19,41 @@ var app = app || {};
       this.$el.html(this.template());
       return this;
     },
+
     addSet: function() {
-      /* create a new set view, and give it our set model */
-      var newSetView = new app.SetView({
-        model: app.Set
-      });
 
-      /* create a new Set model, and add to our Sets collection */
+      /*
+        when the user adds a new set we:
+          - create a new Set model with some default values, and associate the exercise property to the cid of the exercise
+          - add this set to our Sets collection
+
+      */
+
+      /* create the model */
       var newSet = new app.Set({
-        name: 'my awesome set'
-        // exercise: $cid - pass the CID of the exercise here
+        weight: 0,
+        reps: 0,
+        exercise: this.model.cid
       });
 
+      /* add it to the Sets collection */
       app.Sets.create(newSet);
 
+      /* create a new set view, and give it our set model */
+      var newSetView = new app.SetView({
+        model: newSet
+      });
+
       /* render the set view after the current set */
-      this.$el.parent().append(newSet.render().el);
+      this.$el.parent().append(newSetView.render().el);
     },
 
     /* when the user enters data into input fields, we save their set data */
-    /* exercise: [{
-        name: 'lah',
-        sets: [
-          { weight: 100, reps: 5 },
-          { weight: 100, reps: 5 },
-          { weight: 100, reps: 5 }
-        ]
-    }]*/
     saveSetData: function(event) {
-      this.model.set("sets", {
-        weight: $(event.target).val()
-      });
-      console.log(this.model);
+      // this.model.set("sets", {
+      //   weight: $(event.target).val()
+      // });
+      // console.log(this.model);
     }
 
   });

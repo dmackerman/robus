@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 
             "js/models/Workout.js",
             "js/models/Exercise.js",
-            "js/models/Sets.js",
+            "js/models/Set.js",
 
             "js/collections/Workouts.js",
             "js/collections/Exercises.js",

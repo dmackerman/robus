@@ -5,11 +5,11 @@ var app = app || {};
 
   /* collection */
   app.SetsCollection = Backbone.Collection.extend({
-    model: app.Workout,
+    model: app.Set,
     localStorage: new Backbone.LocalStorage("Sets")
   });
 
   /* create the collection */
-  app.Sets = new app.WorkoutsCollection();
+  app.Sets = new app.SetsCollection();
 
 })();
