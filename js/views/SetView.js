@@ -10,7 +10,7 @@ var app = app || {};
     template: Handlebars.compile($('#set-item').html()),
     events: {
       'click .add-set': 'addSet',
-      'keypress .set-data': 'saveSetData',
+      'keyup .set-data': 'saveSetData',
     },
     initialize: function() {
       console.log(this.model);
@@ -20,8 +20,7 @@ var app = app || {};
       return this;
     },
 
-    addSet: function() {
-
+    addSet: function(set) {
       /*
         when the user adds a new set we:
           - create a new Set model with some default values, and associate the exercise property to the cid of the exercise
@@ -31,8 +30,8 @@ var app = app || {};
 
       /* create the model */
       var newSet = new app.Set({
-        weight: 0,
-        reps: 0,
+        weight: 150,
+        reps: 5,
         exercise: this.model.cid
       });
 
@@ -48,12 +47,26 @@ var app = app || {};
       this.$el.parent().append(newSetView.render().el);
     },
 
-    /* when the user enters data into input fields, we save their set data */
+    /* when the user enters data into input fields (keyup), we save their set data */
     saveSetData: function(event) {
-      // this.model.set("sets", {
-      //   weight: $(event.target).val()
-      // });
-      // console.log(this.model);
+
+      /* TODO: make this smarter because I coded it on a plane */
+
+      /* first, determine which field they're entering data into, and store the value */
+      var field = event.target.name;
+      var value = $(event.target).val();
+
+      // /* set the new values */
+      this.model.set({
+        weight: $('input[name=weight]').val(),
+        reps: $('input[name=reps]').val()
+      })
+
+      console.log(this.model);
+
+
+
+
     }
 
   });

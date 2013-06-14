@@ -8,25 +8,27 @@ var app = app || {};
     tagName: 'ul',
     className: 'list sets-list',
     initialize: function() {
-
-      /* we have the Exercises model, which means we have the $cid, so let's:
-        - first check if there are any existing sets for this Exercise.
-        - generate an array that contains the list of Sets in this Exercise
-        - if not, create a new initial first set by creating a Set model and setting the "exercise" property to
-            be the CID of the Exercise
-      */
       this.setsInThisExercise = app.Sets.where({ exercise: this.model.cid });
     },
 
     render: function() {
-
       /*  if we don't have any Sets that match this Exercise:
             - create a new Set model, and associate it with teh Exercise
             - this.model contains our CID for the Exercise, so we'll pass it to the individual set view
             - render the initial view */
       if (this.setsInThisExercise.length == 0) {
+
+        /* when we don't ahve any existing sets, we need to create one */
+
+        /* create the model */
+        var newSet = new app.Set({
+          weight: 0,
+          reps: 0,
+          exercise: this.model.cid
+        });
+
         var setView = new app.SetView({
-          model: this.model
+          model: newSet
         });
 
         /* render an initial empty SetView */
@@ -50,7 +52,6 @@ var app = app || {};
       });
 
       this.$el.append(setView.render().el);
-
     }
   });
 

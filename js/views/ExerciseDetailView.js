@@ -8,6 +8,7 @@ var app = app || {};
     template: Handlebars.compile($('#exercise-detail-view').html()),
     events: {
       'click .button-prev': 'onClickButtonPrev',
+      'click .button-add': 'onAddSetButton'
     },
     /* pass in options so we can get variables from the workouts list */
     initialize: function(options) {
