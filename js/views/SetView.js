@@ -56,10 +56,11 @@ var app = app || {};
       var field = event.target.name;
       var value = $(event.target).val();
 
-      // /* set the new values */
+      /* set the new values, making sure we're setting the right ones based on the
+        cid of the model, which we've passed to the template as an ID */
       this.model.set({
-        weight: $('input[name=weight]').val(),
-        reps: $('input[name=reps]').val(),
+        weight: $('#'+this.model.cid+' input[name=weight]').val(),
+        reps: $('#'+this.model.cid+' input[name=reps]').val(),
         exercise: this.model.get('exercise')
       })
 
