@@ -13,7 +13,7 @@ var app = app || {};
       'keyup .set-data': 'saveSetData',
     },
     initialize: function() {
-      console.log(this.model);
+      // console.log(this.model);
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
@@ -30,9 +30,9 @@ var app = app || {};
 
       /* create the model */
       var newSet = new app.Set({
-        weight: 150,
-        reps: 5,
-        exercise: this.model.cid
+        weight: 0,
+        reps: 0,
+        exercise: this.model.get('exercise')
       });
 
       /* add it to the Sets collection */
@@ -59,7 +59,8 @@ var app = app || {};
       // /* set the new values */
       this.model.set({
         weight: $('input[name=weight]').val(),
-        reps: $('input[name=reps]').val()
+        reps: $('input[name=reps]').val(),
+        exercise: this.model.get('exercise')
       })
 
       console.log(this.model);

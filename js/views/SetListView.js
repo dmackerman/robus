@@ -16,20 +16,24 @@ var app = app || {};
             - create a new Set model, and associate it with teh Exercise
             - this.model contains our CID for the Exercise, so we'll pass it to the individual set view
             - render the initial view */
+
       if (this.setsInThisExercise.length == 0) {
+        console.log('this exercise has no sets yet bloke');
+        /* when we don't have any existing sets, we need to create one */
 
-        /* when we don't ahve any existing sets, we need to create one */
-
-        /* create the model */
-        var newSet = new app.Set({
+        /* create the model, associate 'exercise' on the set to the cid of the exercise */
+        var initialSet = new app.Set({
           weight: 0,
           reps: 0,
           exercise: this.model.cid
         });
 
         var setView = new app.SetView({
-          model: newSet
+          model: initialSet
         });
+
+        /* create our initial set and add it to the Sets colleciton */
+        app.Sets.create(initialSet);
 
         /* render an initial empty SetView */
         this.$el.append(setView.render().el);
