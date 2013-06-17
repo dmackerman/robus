@@ -4,6 +4,10 @@ var app = app || {};
   'use strict';
 
   app.Set = Backbone.Model.extend({
+    defaults: {
+      weight: 0,
+      reps: 0
+    },
     toJSON: function() {
       var json = Backbone.Model.prototype.toJSON.apply(this, arguments);
       json.cid = this.cid;

@@ -13,7 +13,7 @@ var app = app || {};
       'keyup .set-data': 'saveSetData',
     },
     initialize: function() {
-      // console.log(this.model);
+      console.log(this.model);
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
@@ -25,8 +25,6 @@ var app = app || {};
         when the user adds a new set we:
           - create a new Set model with some default values, and associate the exercise property to the cid of the exercise
           - add this set to our Sets collection
-
-      */
 
       /* create the model */
       var newSet = new app.Set({
@@ -54,7 +52,6 @@ var app = app || {};
 
       /* first, determine which field they're entering data into, and store the value */
       var field = event.target.name;
-      // var value = $(event.target).val();
 
       /* set the new values, making sure we're setting the right ones based on the
         cid of the model, which we've passed to the template as an ID */
@@ -67,7 +64,8 @@ var app = app || {};
         this.model.set({ reps: $('#'+this.model.cid+' input[name=reps]').val() });
       }
 
-      console.log(this.model);
+      /* save our model to localStorage */
+      this.model.save();
 
     }
 

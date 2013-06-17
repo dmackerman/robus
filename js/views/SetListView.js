@@ -52,8 +52,11 @@ var app = app || {};
       var setView = new app.SetView({
         model: set,
         weight: set.get('weight'),
-        reps: set.get('reps')
+        reps: set.get('reps'),
+        exercise: this.model.cid
       });
+
+      // console.log('weight: ' + set.get('weight') + ' reps: ' + set.get('reps') + ' exercise: ' + set.get('exercise'));
 
       this.$el.append(setView.render().el);
     }
