@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       },
       /* watch our files for change, reload */
       livereload: {
-        files: ['*.html', 'assets/css/*.css', 'assets/images/*', 'assets/js/app.min.js'],
+        files: ['*.html', 'assets/css/*.css', 'assets/images/**/*', 'js/app.min.js'],
         options: {
           livereload: true
         }

@@ -7,8 +7,10 @@ var app = app || {};
   app.SetListView = Backbone.View.extend({
     tagName: 'ul',
     className: 'list sets-list',
+
     initialize: function() {
       this.setsInThisExercise = app.Sets.where({ exercise: this.model.cid });
+      this.listenTo(this.collection, 'destroy', this.removeSet);
     },
 
     render: function() {
@@ -18,13 +20,10 @@ var app = app || {};
             - render the initial view */
 
       if (this.setsInThisExercise.length == 0) {
-        console.log('this exercise has no sets yet bloke');
         /* when we don't have any existing sets, we need to create one */
 
         /* create the model, associate 'exercise' on the set to the cid of the exercise */
         var initialSet = new app.Set({
-          weight: 0,
-          reps: 0,
           exercise: this.model.cid
         });
 
@@ -56,10 +55,14 @@ var app = app || {};
         exercise: this.model.cid
       });
 
-      // console.log('weight: ' + set.get('weight') + ' reps: ' + set.get('reps') + ' exercise: ' + set.get('exercise'));
-
       this.$el.append(setView.render().el);
+    },
+
+
+    removeSet: function() {
+      console.log('set removed');
     }
+
   });
 
 })(Zepto);

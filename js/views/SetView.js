@@ -10,14 +10,24 @@ var app = app || {};
     template: Handlebars.compile($('#set-item').html()),
     events: {
       'click .add-set': 'addSet',
+      'click .delete-set': 'deleteSet',
       'keyup .set-data': 'saveSetData',
     },
     initialize: function() {
-      console.log(this.model);
+      this.listenTo(this.model, 'change', this.thingChange);
     },
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
       return this;
+    },
+
+    thingChange: function() {
+      console.log('i changed');
+    },
+
+    deleteSet: function(set) {
+      this.model.destroy();
+      // console.log('delete me ' + this.model.cid);
     },
 
     addSet: function(set) {

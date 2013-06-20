@@ -9,9 +9,6 @@ var app = app || {};
       'click .button-block': 'submit',
       'click .button-close': 'onCloseButton'
     },
-    initialize: function() {
-
-    },
     render: function() {
       this.$el.html(this.template());
       return this;

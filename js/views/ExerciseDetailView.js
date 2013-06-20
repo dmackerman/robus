@@ -17,7 +17,7 @@ var app = app || {};
       this.workout = this.model.get('workout');
 
       /* generate our first SetListView */
-      this.setView = new app.SetListView({ model: this.model });
+      this.setView = new app.SetListView({ model: this.model, collection: app.Sets });
     },
     render: function() {
       /* find our .content block within the template, and render the view */
